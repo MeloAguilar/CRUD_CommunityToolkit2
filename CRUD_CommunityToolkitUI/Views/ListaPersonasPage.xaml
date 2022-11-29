@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_CommunityToolkitUI.Views.ListaPersonasPage"
+             xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
+             xmlns:model="clr-namespace:CRUD_CommunityToolkitUI.Models"
+             x:DataType="vm:clsVMListadoPersonas"
+             Title="{Binding Title}"
+             x:Name="PersonasPage">
+    <ContentPage.BindingContext>
+        <vm:clsVMListadoPersonas/>
+    </ContentPage.BindingContext>
+    <Grid
+       ColumnDefinitions="*,*"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="3">
+        <CollectionView 
+            x:Name="coleccionPersonas"
+            ItemsSource="{Binding ListadoPersonas}"
+            SelectionMode="None"
+            Grid.ColumnSpan="2">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:clsPersonaConDepartamento">
+                    <Grid Padding="5">
+                        <SwipeView
+                                HorizontalOptions="Start">
+                            
+                            <SwipeView.RightItems>
+                                
+                                <SwipeItem Text="Eliminar"
+                                               BackgroundColor="Red"
+                                               CommandParameter="{Binding .}"
+                                               Command="{Binding BindingContext.DeleteComand, Source={x:Reference Name=coleccionPersonas}}"/>
+
+                            </SwipeView.RightItems>
+                            <SwipeView.LeftItems>
+                                <SwipeItem Text="Editar"
+                                               BackgroundColor="Green"
+                                               CommandParameter="{Binding .}"
+                                               Command="{Binding BindingContext.GotoEditInsertPersonaCommand, Source={x:Reference Name=coleccionPersonas}}"/>
+                            </SwipeView.LeftItems>
+                            <Frame
+                            HeightRequest="125">
+                            
+                                <!--<Frame.GestureRecognizers>
+                                <SwipeGestureRecognizer 
+                                    Direction="Left"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:clsVMListadoPersonas}}, Path=GotoEditInsertPersonaCommand}">
+
+                                </SwipeGestureRecognizer>
+                               
+                            </Frame.GestureRecognizers>-->
+                            <Grid
+                                Padding="0"
+                                ColumnDefinitions="125,*">
+                                
+                                <Image
+                                    Aspect="AspectFill"
+                                    Source="{Binding Foto}"
+                                    WidthRequest="125"
+                                    HeightRequest="125"/>
+                                
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10"
+                                    Spacing="30"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        Text="{Binding NombreCompleto}"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        />
+                                    <Label
+                                        Text="{Binding NombreDepartamento}"/>
+
+                                </VerticalStackLayout>
+                                
+
+                            </Grid>
+                            </Frame>
+                            </SwipeView>
+                        
+                        
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+            
+            
+        </CollectionView>
+        <Button
+            Text="+"
+            FontSize="30"
+            HeightRequest="60"
+            WidthRequest="60"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Margin="0,0,40,40"
+            CornerRadius="13"
+            Grid.Column="1"
+            Command="{Binding GotoEditInsertPersonaCommand}"/>
+        <ActivityIndicator 
+            IsVisible="{Binding IsBusy}"
+            IsRunning="{Binding IsBusy}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"/>
+    </Grid>
+
+</ContentPage>

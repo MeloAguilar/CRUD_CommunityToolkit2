@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CRUD_CommunityToolkitUI</name>
+    </assembly>
+    <members>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.Persona">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.persona"/>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.IdDepartamentoElegido">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.idDepartamentoElegido"/>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GetPersonasAsync">
+            <summary>
+            Descripción: Comando que se encarga de rellenar la lista de personas a 
+            partir de una llamada a la función de la capa BL.
+            
+            Precondiciones: Ninguna
+            Postcondiciones: Ninguna
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.getListadoPersonasConNombreDepartamento">
+            <summary>
+            
+            Método privado que sirve para transformar una lista de objetos clsPersona en una
+            ObservableCollection de clsPersonaConDepartamento.
+            A partir de una llamada a la capa BL recorre el listado recibido.
+            
+            Precondiciones: Ninguna
+            PostCondiciones: Ninguna
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.ListadoPersonas">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.listadoPersonas"/>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.gotoEditInsertPersonaCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsync(CRUD_CommunityToolkitUI.Models.clsPersonaConDepartamento)"/>.</summary>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.getPersonasCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GetPersonasCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GetPersonasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GetPersonasAsync"/>.</summary>
+        </member>
+        <member name="T:CRUD_CommunityToolkitUI.ViewModels.Utilities.clsVMBase">
+            <summary>
+            ViewModel Base con la herencia de ObservableObject del CommunityToolkit
+            Esto hace que se implemente ayutomáticamente la interfaz INotifyPropertyChanged
+            de una forma mucho más sencilla.
+            
+            Tambiñén autogenera las propiedades públicas con la implementacion de NotifyPropertyChanged, lo que hace los bindings un poco más sencillos
+            </summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.Utilities.clsVMBase.IsBusy">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.Utilities.clsVMBase.isBusy"/>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.Utilities.clsVMBase.Title">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.Utilities.clsVMBase.title"/>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of the RelayCommand class that 
+            can always execute.
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <exception cref="T:System.ArgumentNullException">If the execute argument is null.</exception>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+            Initializes a new instance of the RelayCommand class.
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
+            <exception cref="T:System.ArgumentNullException">If the execute argument is null.</exception>
+        </member>
+        <member name="E:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.CanExecuteChanged">
+            <summary>
+            Occurs when changes occur that affect whether the command should execute.
+            </summary>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.RaiseCanExecuteChanged">
+            <summary>
+            Raises the <see cref="E:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.CanExecuteChanged" /> event.
+            </summary>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.CanExecute(System.Object)">
+            <summary>
+            Defines the method that determines whether the command can execute in its current state.
+            </summary>
+            <param name="parameter">This parameter will always be ignored.</param>
+            <returns>true if this command can be executed; otherwise, false.</returns>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.Utilities.DelegateCommand.Execute(System.Object)">
+            <summary>
+            Defines the method to be called when the command is invoked. 
+            </summary>
+            <param name="parameter">This parameter will always be ignored.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\bin\Debug\net6.0\DAL.deps.json
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\bin\Debug\net6.0\DAL.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\bin\Debug\net6.0\DAL.pdb
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\bin\Debug\net6.0\Entities.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\bin\Debug\net6.0\Entities.pdb
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\refint\DAL.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\DAL.pdb
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\DAL\obj\Debug\net6.0\ref\DAL.dll
