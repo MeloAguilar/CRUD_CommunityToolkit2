@@ -7,10 +7,9 @@ public partial class DetallesPersonaPage : ContentPage
 {
 
 	
-	public DetallesPersonaPage(clsVMEditarInsertarPersona viewModel)
+	public DetallesPersonaPage()
 	{
 		InitializeComponent();
-		BindingContext = viewModel;
 	}
 
 

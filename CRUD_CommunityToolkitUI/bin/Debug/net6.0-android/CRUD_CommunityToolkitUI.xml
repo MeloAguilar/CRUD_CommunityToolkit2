@@ -4,11 +4,19 @@
         <name>CRUD_CommunityToolkitUI</name>
     </assembly>
     <members>
-        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.Persona">
-            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.persona"/>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.PersonaSeleccionada">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.personaSeleccionada"/>
         </member>
-        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.IdDepartamentoElegido">
-            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.idDepartamentoElegido"/>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.DepartaMentoSeleccionado">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.departaMentoSeleccionado"/>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsync">
+            <summary>
+            Comando que convierte personaSeleccionada en un 
+            objeto clsPersona y lo envía a la Pagina DetallesPage
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GetPersonasAsync">
             <summary>
@@ -32,14 +40,23 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.PersonaSeleccionada">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.personaSeleccionada"/>
+        </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.ListadoPersonas">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.listadoPersonas"/>
         </member>
-        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.gotoEditInsertPersonaCommand">
-            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaCommand"/>.</summary>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.deletePersonaCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersonaCommand"/>.</summary>
         </member>
-        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsync(CRUD_CommunityToolkitUI.Models.clsPersonaConDepartamento)"/>.</summary>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersonaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersona"/>.</summary>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.gotoEditInsertPersonaAsyncCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsyncCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsyncCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsync"/>.</summary>
         </member>
         <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.getPersonasCommand">
             <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GetPersonasCommand"/>.</summary>

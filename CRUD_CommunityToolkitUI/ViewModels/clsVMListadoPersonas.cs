@@ -19,52 +19,36 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		clsListadoPersonasBL bl;
 
-		 DelegateCommand deleteCommand;
+		DelegateCommand deleteCommand;
 		#endregion
-
+		[ObservableProperty]
+		clsPersonaConDepartamento personaSeleccionada;
 		#region Properties
 		[ObservableProperty]
-		 ObservableCollection<clsPersonaConDepartamento> listadoPersonas;
+		ObservableCollection<clsPersonaConDepartamento> listadoPersonas;
 
-		
-		public clsPersonaConDepartamento PersonaSeleccionada { get; set; }
 
-		public DelegateCommand DeleteCommand
-		{
-			get
-			{
-				deleteCommand = new DelegateCommand(DeleteCommand_Executed, DeleteCommand_CanExecute);
-				return deleteCommand;
-			}
-		}
+
+
+		//public DelegateCommand DeleteCommand
+		//{
+		//	get
+		//	{
+		//		deleteCommand = new DelegateCommand(DeleteCommand_Executed, DeleteCommand_CanExecute);
+		//		return deleteCommand;
+		//	}
+		//}
 		#endregion
 
-		public void DeleteCommand_Executed()
-		{
 
-			ListadoPersonas.Remove(PersonaSeleccionada);
-
-		}
-
-		public bool DeleteCommand_CanExecute()
-		{
-			var canDelete = false;
-			if (PersonaSeleccionada == null)
-			{
-				canDelete = true;
-			}
-
-			return canDelete;
-		}
 
 		#region Constructors
 
 		public clsVMListadoPersonas()
 		{
-			this.deleteCommand = new DelegateCommand(DeleteCommand_Executed, DeleteCommand_CanExecute);
+			//deleteCommand = new DelegateCommand(DeleteCommand_Executed, DeleteCommand_CanExecute);
 			Title = "Gestor de Personas";
 			this.bl = new();
-			this.PersonaSeleccionada = null;
 			this.ListadoPersonas = getListadoPersonasConNombreDepartamento();
 		}
 
@@ -78,93 +62,131 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		#region CommandImplementation
 
+		//public void DeleteCommand_Executed()
+		//{
+
+		//	}
+
+
+
+
+		//}
+
+		//public bool DeleteCommand_CanExecute()
+		//{
+		//	var canDelete = false;
+		//	if (PersonaSeleccionada == null)
+		//	{
+		//		canDelete = true;
+		//	}
+
+		//	return canDelete;
+		//}
 
 
 		[RelayCommand]
-		async Task GotoEditInsertPersonaAsync(clsPersonaConDepartamento persona)
+		public void DeletePersona()
 		{
-			var p = new clsPersona();
-			var id = 0;
-			if (persona is not null)
+
+			var result = Shell.Current.DisplayAlert("Gestor Empresa", "¿Está seguro de qesea eliminar el registro?", "Si","No");
+			if (result.)
 			{
-				id = persona.IdPersona;
-			clsGestionPersonasBL gestionBL = new();
-			
+				ListadoPersonas.Remove(PersonaSeleccionada);
+				Shell.Current.DisplayAlert("Gestor Empresa", "Se eliminó el registro", "OK");
+			}
+		}
+			/// <summary>
+			/// Comando que convierte personaSeleccionada en un 
+			/// objeto clsPersona y lo envía a la Pagina DetallesPage
+			/// 
+			/// </summary>
+			/// <returns></returns>
 
-			
-				p = gestionBL.getPersonaByIdBL(id);
+			[RelayCommand]
+			public void GotoEditInsertPersonaAsync()
+			{
+				var p = new clsPersona();
+				var id = 0;
+				if (PersonaSeleccionada is not null)
+				{
+					id = PersonaSeleccionada.IdPersona;
+					clsGestionPersonasBL gestionBL = new();
 
-			//Navegamos a la pagina de detalles y le pasamos la persona co un Dictionary
-			//Para poder pasar el objeto
-		 }
-			await Shell.Current.GoToAsync($"{nameof(DetallesPersonaPage)}", true, 
-				new Dictionary<string, object>
+
+
+					p = gestionBL.getPersonaByIdBL(id);
+
+					//Navegamos a la pagina de detalles y le pasamos la persona co un Dictionary
+					//Para poder pasar el objeto
+				}
+				var diccionario = new Dictionary<string, object>
 				{
 					{"PersonaAModificar", p }
-				});
-			
-				
-
-			
-			
-		}
+				};
 
 
+				Shell.Current.GoToAsync($"{nameof(ListaPersonasPage)}/{nameof(DetallesPersonaPage)}", true, diccionario);
 
-		/// <summary>
-		/// Descripción: Comando que se encarga de rellenar la lista de personas a 
-		/// partir de una llamada a la función de la capa BL.
-		/// 
-		/// Precondiciones: Ninguna
-		/// Postcondiciones: Ninguna
-		/// </summary>
-		/// <returns></returns>
-		[RelayCommand]
-		async Task GetPersonasAsync()
-		{
-			//Si se está llamando a otro método
-			if (IsBusy)
-				return;
 
-			try
+			}
+
+
+
+			/// <summary>
+			/// Descripción: Comando que se encarga de rellenar la lista de personas a 
+			/// partir de una llamada a la función de la capa BL.
+			/// 
+			/// Precondiciones: Ninguna
+			/// Postcondiciones: Ninguna
+			/// </summary>
+			/// <returns></returns>
+			[RelayCommand]
+			async Task GetPersonasAsync()
 			{
-				//Le decimos a la vista que el viewModel está cargando su petición
-				IsBusy = true;
-
-				//Llamamos a la capa BL para que nos envíe un listado de objetos clsPersona
-				var personas = getListadoPersonasConNombreDepartamento();
-
-				if(ListadoPersonas.Count > 0)
-					ListadoPersonas.Clear();
-				
-
-				foreach(var p in personas)
-					ListadoPersonas.Add(p);
-
-				//Ordeno la lista por idDepartamento
-				var first = ListadoPersonas.OrderBy(m =>
-				m.IdDepartamento).FirstOrDefault();
-
-				//Compruebo que el preimero no sea null
-				if (first == null)
+				//Si se está llamando a otro método
+				if (IsBusy)
 					return;
+
+				try
+				{
+					//Le decimos a la vista que el viewModel está cargando su petición
+					IsBusy = true;
+
+					//Llamamos a la capa BL para que nos envíe un listado de objetos clsPersona
+					var personas = getListadoPersonasConNombreDepartamento();
+
+					if (ListadoPersonas.Count > 0)
+						ListadoPersonas.Clear();
+
+
+					foreach (var p in personas)
+						ListadoPersonas.Add(p);
+
+					//Ordeno la lista por idDepartamento
+					var first = ListadoPersonas.OrderBy(m =>
+					m.IdDepartamento).FirstOrDefault();
+
+					//Compruebo que el preimero no sea null
+					if (first == null)
+						return;
+				}
+				catch (Exception e)
+				{
+					//Muestro un Alert que informará sobre el error que ha sucedido
+					await Shell.Current.DisplayAlert("Error!", $"Imposible Mostrar el listado de Personas: {e.Message}", "OK");
+				}
+				finally
+				{
+					//Le decimos que el viewModel ya no está ocupado
+					IsBusy = false;
+				}
 			}
-			catch (Exception e)
-			{
-				//Muestro un Alert que informará sobre el error que ha sucedido
-				await Shell.Current.DisplayAlert("Error!", $"Imposible Mostrar el listado de Personas: {e.Message}", "OK");
-			}
-			finally
-			{
-				//Le decimos que el viewModel ya no está ocupado
-				IsBusy = false;
-			}
-		}
 
 
 
+		
 
-
+		#endregion
 
 
 		/// <summary>
@@ -189,9 +211,9 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			//Recojo la lista de personas
 			var personasList = bl.getListadoCompletoPersonasBL();
 
-			
+
 			//Recorro la lista completa de personas
-			foreach (var p in personasList) 
+			foreach (var p in personasList)
 			{
 				var isDptFind = false;
 				//Recorro la lista de departamentos hasta que se encuentre el que estoy buscando
@@ -200,12 +222,12 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 					//Genero un departamento auxiliar para que el código sea más corto
 					var dpt = departamentosList[i];
 					//Si el idDepartamento que he recogido del bucle for es igual al idDepartamento de la persona recogida en el bucle foreach
-					if(p.IdDepartamento == dpt.Id)
+					if (p.IdDepartamento == dpt.Id)
 					{
 						//Establezco que se encontró el departamento
 						isDptFind = true;
 						//Convierto la persona en una que contenga el nombre del departamento
-						var pc = new clsPersonaConDepartamento(p.Id, p.Nombre, p.Apellidos,p.Foto, dpt.Nombre);
+						var pc = new clsPersonaConDepartamento(p.Id, p.Nombre, p.Apellidos, p.Foto, dpt.Nombre);
 
 						//Añado el objeto clsPersonaConDepartamento a la lista
 						personas.Add(pc);
@@ -216,6 +238,5 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			return personas;
 		}
 
-		#endregion
 	}
 }

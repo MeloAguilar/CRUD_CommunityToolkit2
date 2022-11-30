@@ -12,4 +12,11 @@ public partial class ListaPersonasPage : ContentPage
 		App.Current.MainPage = new MainPage();
 		return base.OnBackButtonPressed();
 	}
+
+	protected override void OnAppearing()
+	{
+		InitializeComponent();
+
+		base.OnAppearing();
+	}
 }

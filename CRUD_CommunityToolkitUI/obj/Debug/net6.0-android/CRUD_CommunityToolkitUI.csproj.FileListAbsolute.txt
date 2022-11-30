@@ -160,11 +160,9 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\Mono.Android.Export.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\Mono.Android.Export.pdb
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\Mono.Android.pdb
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\mscorlib.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\netstandard.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.AppContext.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Buffers.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Collections.Concurrent.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Collections.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Collections.Immutable.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Collections.NonGeneric.dll
@@ -181,7 +179,6 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Core.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Data.Common.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Data.DataSetExtensions.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Data.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Diagnostics.Contracts.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Diagnostics.Debug.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Diagnostics.DiagnosticSource.dll
@@ -192,7 +189,6 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Diagnostics.Tools.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Diagnostics.TraceSource.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Diagnostics.Tracing.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Drawing.Common.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Drawing.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Drawing.Primitives.dll
@@ -229,7 +225,6 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.HttpListener.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.Mail.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.NameResolution.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.NetworkInformation.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.Ping.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.Primitives.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.Quic.dll
@@ -245,9 +240,7 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Numerics.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Numerics.Vectors.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.ObjectModel.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.CoreLib.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.DataContractSerialization.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.Uri.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.Xml.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.Xml.Linq.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Reflection.DispatchProxy.dll
@@ -316,7 +309,6 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Web.HttpUtility.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Windows.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Windows.Extensions.dll
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Xml.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Xml.Linq.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Xml.ReaderWriter.dll
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Xml.Serialization.dll
@@ -997,3 +989,11 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\environment.x86_64.o
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\compressed_assemblies.x86_64.o
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\app_shared_libraries\x86_64\libxamarin-app.so
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\mscorlib.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Collections.Concurrent.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Data.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Net.NetworkInformation.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.CoreLib.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Private.Uri.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-android\android\assets\System.Xml.dll

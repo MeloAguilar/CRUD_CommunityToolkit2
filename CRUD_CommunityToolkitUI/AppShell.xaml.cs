@@ -12,8 +12,7 @@ public partial class AppShell : Shell
 
 		Routing.RegisterRoute(nameof(ListadoDepartamentosPage), typeof(ListadoDepartamentosPage));
 
-		Routing.RegisterRoute(nameof(DetallesPersonaPage), typeof(DetallesPersonaPage));
-
+		Routing.RegisterRoute($"{nameof(ListaPersonasPage)}/{nameof(DetallesPersonaPage)}", typeof(DetallesPersonaPage));
 
 	}
 }

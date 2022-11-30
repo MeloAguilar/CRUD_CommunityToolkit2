@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace CRUD_CommunityToolkitUI.ViewModels
 {
-	[QueryProperty("PersonaAModificar", "Persona")]
+	[QueryProperty("PersonaAModificar", nameof(PersonaSeleccionada))]
 	public partial class clsVMEditarInsertarPersona : clsVMBase
 	{
 		#region Atributtes
 		clsListadoDepartamentosBL deptBL;
 
 		[ObservableProperty]
-		clsPersona persona;
+		clsPersona personaSeleccionada;
 
 		[ObservableProperty]
-		int idDepartamentoElegido;
+		clsDepartamento departaMentoSeleccionado;
 
 		#endregion
 
@@ -30,6 +30,8 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		#endregion
 
 		#region Constructors
+
+
 		public clsVMEditarInsertarPersona()
 		{
 			deptBL = new();
@@ -38,9 +40,9 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			{
 				ListaDepartamentos.Add(departamento);
 			}
-			if (Persona is not null)
+			if (PersonaSeleccionada is not null)
 			{
-				Title = Persona.NombreCompleto;
+				Title = PersonaSeleccionada.NombreCompleto;
 			}
 			else
 			{
@@ -51,7 +53,9 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 
 
+		#region Commands
 
+		#endregion
 
 
 

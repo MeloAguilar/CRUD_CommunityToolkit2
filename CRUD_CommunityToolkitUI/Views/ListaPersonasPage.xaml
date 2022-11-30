@@ -7,6 +7,7 @@
              x:DataType="vm:clsVMListadoPersonas"
              Title="{Binding Title}"
              x:Name="PersonasPage">
+
     <ContentPage.BindingContext>
         <vm:clsVMListadoPersonas/>
     </ContentPage.BindingContext>
@@ -18,78 +19,75 @@
         <CollectionView 
             x:Name="coleccionPersonas"
             ItemsSource="{Binding ListadoPersonas}"
-            SelectionMode="None"
+            SelectionMode="Single"
+            SelectedItem="{Binding PersonaSeleccionada}"
             Grid.ColumnSpan="2">
 
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:clsPersonaConDepartamento">
-                    <Grid Padding="5">
+                <DataTemplate 
+                    x:DataType="model:clsPersonaConDepartamento"
+                    >
+                    <Grid 
+                        Padding="5">
                         <SwipeView
                                 HorizontalOptions="Start">
-                            
+
                             <SwipeView.RightItems>
-                                
-                                <SwipeItem Text="Eliminar"
-                                               BackgroundColor="Red"
-                                               CommandParameter="{Binding .}"
-                                               Command="{Binding BindingContext.DeleteComand, Source={x:Reference Name=coleccionPersonas}}"/>
+
+                                <SwipeItem 
+                                    Text="Eliminar"
+                                    BackgroundColor="Red"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding BindingContext.DeletePersonaCommand, Source={x:Reference Name=PersonasPage}}"/>
 
                             </SwipeView.RightItems>
+
                             <SwipeView.LeftItems>
-                                <SwipeItem Text="Editar"
-                                               BackgroundColor="Green"
-                                               CommandParameter="{Binding .}"
-                                               Command="{Binding BindingContext.GotoEditInsertPersonaCommand, Source={x:Reference Name=coleccionPersonas}}"/>
+                                <SwipeItem 
+                                    Text="Editar"
+                                    BackgroundColor="Green"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding BindingContext.GotoEditInsertPersonaAsyncCommand, Source={x:Reference Name=PersonasPage}}"/>
                             </SwipeView.LeftItems>
                             <Frame
                             HeightRequest="125">
-                            
-                                <!--<Frame.GestureRecognizers>
-                                <SwipeGestureRecognizer 
-                                    Direction="Left"
-                                    CommandParameter="{Binding .}"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:clsVMListadoPersonas}}, Path=GotoEditInsertPersonaCommand}">
-
-                                </SwipeGestureRecognizer>
-                               
-                            </Frame.GestureRecognizers>-->
-                            <Grid
+                                <Grid
                                 Padding="0"
                                 ColumnDefinitions="125,*">
-                                
-                                <Image
-                                    Aspect="AspectFill"
-                                    Source="{Binding Foto}"
-                                    WidthRequest="125"
-                                    HeightRequest="125"/>
-                                
-                                <VerticalStackLayout
-                                    Grid.Column="1"
-                                    Padding="10"
-                                    Spacing="30"
-                                    VerticalOptions="Center">
-                                    <Label
-                                        Text="{Binding NombreCompleto}"
-                                        FontAttributes="Bold"
-                                        FontSize="20"
+
+                                    <Image
+                                        Aspect="AspectFill"
+                                        Source="{Binding Foto}"
+                                        WidthRequest="125"
+                                        HeightRequest="125"/>
+
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Padding="10"
+                                        Spacing="30"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            Text="{Binding NombreCompleto}"
+                                            FontAttributes="Bold"
+                                            FontSize="20"
                                         />
-                                    <Label
-                                        Text="{Binding NombreDepartamento}"/>
+                                        <Label
+                                            Text="{Binding NombreDepartamento}"/>
 
-                                </VerticalStackLayout>
-                                
+                                    </VerticalStackLayout>
 
-                            </Grid>
+
+                                </Grid>
                             </Frame>
-                            </SwipeView>
-                        
-                        
+                        </SwipeView>
+
+
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-            
-            
-            
+
+
+
         </CollectionView>
         <Button
             Text="+"
@@ -101,7 +99,7 @@
             Margin="0,0,40,40"
             CornerRadius="13"
             Grid.Column="1"
-            Command="{Binding GotoEditInsertPersonaCommand}"/>
+            Command="{Binding GotoEditInsertPersonaAsyncCommand}"/>
         <ActivityIndicator 
             IsVisible="{Binding IsBusy}"
             IsRunning="{Binding IsBusy}"
