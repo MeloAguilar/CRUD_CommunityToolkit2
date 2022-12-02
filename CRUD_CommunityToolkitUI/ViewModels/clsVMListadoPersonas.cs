@@ -19,25 +19,20 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		clsListadoPersonasBL bl;
 
-		DelegateCommand deleteCommand;
 		#endregion
 		[ObservableProperty]
+		[NotifyPropertyChangedFor(nameof(ListadoPersonas))]
 		clsPersonaConDepartamento personaSeleccionada;
-		#region Properties
+
 		[ObservableProperty]
 		ObservableCollection<clsPersonaConDepartamento> listadoPersonas;
+		#region Properties
 
 
 
 
-		//public DelegateCommand DeleteCommand
-		//{
-		//	get
-		//	{
-		//		deleteCommand = new DelegateCommand(DeleteCommand_Executed, DeleteCommand_CanExecute);
-		//		return deleteCommand;
-		//	}
-		//}
+
+
 		#endregion
 
 
@@ -46,7 +41,6 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		public clsVMListadoPersonas()
 		{
-			//deleteCommand = new DelegateCommand(DeleteCommand_Executed, DeleteCommand_CanExecute);
 			Title = "Gestor de Personas";
 			this.bl = new();
 			this.ListadoPersonas = getListadoPersonasConNombreDepartamento();
@@ -62,39 +56,32 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		#region CommandImplementation
 
-		//public void DeleteCommand_Executed()
-		//{
-
-		//	}
-
-
-
-
-		//}
-
-		//public bool DeleteCommand_CanExecute()
-		//{
-		//	var canDelete = false;
-		//	if (PersonaSeleccionada == null)
-		//	{
-		//		canDelete = true;
-		//	}
-
-		//	return canDelete;
-		//}
-
-
+		/// <summary>
+		/// 
+		/// Descripcion: Método que se encarga de asegurar que el usuario quería realizar la accion y,
+		/// en caso positivo, énvia una peticion a la capa BL para que nos permita eliminar un registro de la 
+		/// tabla Personas de la base de datos.
+		/// Precondiciones:
+		/// PostCondiciones: 
+		/// 
+		/// </summary>
 		[RelayCommand]
-		public void DeletePersona()
+		public async void DeletePersona()
 		{
 
-			var result = Shell.Current.DisplayAlert("Gestor Empresa", "¿Está seguro de qesea eliminar el registro?", "Si","No");
-			if (result.)
+			var result = await Shell.Current.DisplayAlert("Gestor Empresa", "¿Está seguro de qesea eliminar el registro?", "Si", "No");
+			if (result.Equals(true))
 			{
 				ListadoPersonas.Remove(PersonaSeleccionada);
-				Shell.Current.DisplayAlert("Gestor Empresa", "Se eliminó el registro", "OK");
+				await Shell.Current.DisplayAlert("Gestor Empresa", "Se eliminó el registro", "OK");
 			}
+			PersonaSeleccionada = null;
+
 		}
+
+
+
+
 			/// <summary>
 			/// Comando que convierte personaSeleccionada en un 
 			/// objeto clsPersona y lo envía a la Pagina DetallesPage
@@ -103,7 +90,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			/// <returns></returns>
 
 			[RelayCommand]
-			public void GotoEditInsertPersonaAsync()
+			public async void GotoEditInsertPersonaAsync()
 			{
 				var p = new clsPersona();
 				var id = 0;
@@ -116,17 +103,18 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 					p = gestionBL.getPersonaByIdBL(id);
 
-					//Navegamos a la pagina de detalles y le pasamos la persona co un Dictionary
+					//Navegamos a la pagina de detalles y le pasamos la persona coN un Dictionary
 					//Para poder pasar el objeto
 				}
 				var diccionario = new Dictionary<string, object>
 				{
-					{"PersonaAModificar", p }
+					["PersonaSeleccionada"] = p
 				};
 
+		
 
-				Shell.Current.GoToAsync($"{nameof(ListaPersonasPage)}/{nameof(DetallesPersonaPage)}", true, diccionario);
-
+				await Shell.Current.GoToAsync($"{nameof(DetallesPersonaPage)}", true, diccionario);
+			
 
 			}
 

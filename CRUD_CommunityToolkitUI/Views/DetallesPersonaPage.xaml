@@ -4,17 +4,18 @@
              x:Class="CRUD_CommunityToolkitUI.Views.DetallesPersonaPage"
              xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
              x:DataType="vm:clsVMEditarInsertarPersona"
-             Title="{Binding Title}"
+             Title="{Binding PersonaSeleccionada.NombreCompleto}"
              >
+
     <ContentPage.BindingContext>
         <vm:clsVMEditarInsertarPersona/>
     </ContentPage.BindingContext>
-
+<ScrollView>
     <VerticalStackLayout>
 
         <Border 
         StrokeShape="RoundRectangle 10,10,10,10">
-            <ScrollView>
+            
                 <VerticalStackLayout
                     Spacing="10"
                     Margin="6"
@@ -23,7 +24,7 @@
                     <Grid
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="FillAndExpand"
-                        RowSpacing="50"
+                        RowSpacing="20"
                         ColumnDefinitions="*,Auto,*"
                         RowDefinitions="160,*,*,*,*">
                         <BoxView
@@ -35,7 +36,10 @@
                             HorizontalOptions="FillAndExpand"
                             />
                         <Label
-                            Text="{Binding Title}"
+                            Text="{Binding PersonaSeleccionada.NombreCompleto}"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            TextColor="AliceBlue"
                             Grid.Column="1"
                             Grid.ColumnSpan="2"
                             VerticalOptions="Center"
@@ -56,23 +60,28 @@
                                 WidthRequest="160"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center"
-                                Source="{Binding Path={x:Reference entryFoto}}"/>
+                                BindingContext="{x:Reference entryFoto}"
+                                Source="{Binding Path=Text}"/>
 
                         </Frame>
                         <VerticalStackLayout
-                                Grid.ColumnSpan="3"
                                 Grid.Row="1">
                             <Label Text="Nombre"/>
-                            <Entry Text="{Binding PersonaSeleccionada.Nombre}"/>
+                            <Entry 
+                                x:Name="entryNombre"
+                                Text="{Binding PersonaSeleccionada.Nombre}"/>
 
                         </VerticalStackLayout>
                         <VerticalStackLayout
                                 Grid.Column="1"
                                 Grid.Row="1">
-                            <Label Text="Apellidos"/>
-                            <Entry Text="{Binding PersonaSeleccionada.Apellidos}"
+                            <Label 
+                                Text="Apellidos"/>
+                            <Entry 
+                                x:Name="entryApellidos"
+                                Text="{Binding PersonaSeleccionada.Apellidos}"
                                     Grid.Column="1"
-                                    Grid.Row="5"/>
+                                    Grid.Row="1"/>
                         </VerticalStackLayout>
                         <VerticalStackLayout 
                             Grid.Row="2"
@@ -88,15 +97,15 @@
                                 <Picker 
                                     ItemsSource="{Binding ListaDepartamentos}" 
                                     ItemDisplayBinding="{Binding Nombre}"
-                                    SelectedItem="{Binding DepartaMentoSeleccionado.Id}"
-                                     VerticalOptions="End"
+                                    SelectedItem="{Binding PersonaSeleccionada.IdDepartamento}"
+                                    VerticalOptions="End"
                                     VerticalTextAlignment="End"
                                     HorizontalTextAlignment="Center"/>
                             </Frame>
                         </VerticalStackLayout>
 
                         <VerticalStackLayout 
-                                Grid.Row="2"
+                                Grid.Row="3"
                                 Grid.ColumnSpan="3">
                             <Label Text="Fecha de nacimiento"
                            />
@@ -109,20 +118,22 @@
                                     HorizontalOptions="Center"
                                     Date="{Binding PersonaSeleccionada.FechaNacimiento}"/>
                             </Frame>
+                            
                             <VerticalStackLayout 
-                                Grid.Row="3"
+                                Grid.Row="4"
                                 Grid.ColumnSpan="3">
                                 <Label 
                                     Text="Url de su Fotografía"
                                     Grid.Column="1"
-                                    Grid.Row="3"/>
+                                    Grid.Row="4"/>
 
-
-                                <Entry x:Name="entryFoto"  Text="{Binding PersonaSeleccionada.Foto}"/>
+                                <!--https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800-->
+                                <Entry 
+                                    x:Name="entryFoto"  
+                                    Text="{Binding PersonaSeleccionada.Foto}"/>
                             </VerticalStackLayout>
                             <VerticalStackLayout
-                                Grid.Column="0"
-                                Grid.Row="4"
+                                Grid.Row="5"
                                 Grid.RowSpan="3">
                                 <Label Text="Teléfono"/>
                                 <Entry Text="{Binding PersonaSeleccionada.Telefono}"/>
@@ -145,7 +156,7 @@
                     </Grid>
 
                 </VerticalStackLayout>
-            </ScrollView>
+            
 
         </Border>
 
@@ -153,8 +164,8 @@
             VerticalOptions="End"
             HorizontalOptions="CenterAndExpand"
             Text="Guardar"
-            
+            Command="{Binding GuardarEmpleadoCommand}"
             />
     </VerticalStackLayout>
-
+</ScrollView>
 </ContentPage>

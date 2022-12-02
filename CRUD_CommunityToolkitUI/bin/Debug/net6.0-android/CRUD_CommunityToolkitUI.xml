@@ -4,11 +4,37 @@
         <name>CRUD_CommunityToolkitUI</name>
     </assembly>
     <members>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleado">
+            <summary>
+            Descripcion: Comando que se encarga de pedir a la capa BL que pida a la capa DAL acceso a la
+            insercion o edicion de un registro de la tabla Pêrsonas de la base de datos.
+            </summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.NombreCompleto">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.nombreCompleto"/>
+        </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.PersonaSeleccionada">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.personaSeleccionada"/>
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.DepartaMentoSeleccionado">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.departaMentoSeleccionado"/>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.guardarEmpleadoCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleadoCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleadoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleado"/>.</summary>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersona">
+            <summary>
+            
+            Descripcion: Método que se encarga de asegurar que el usuario quería realizar la accion y,
+            en caso positivo, énvia una peticion a la capa BL para que nos permita eliminar un registro de la 
+            tabla Personas de la base de datos.
+            Precondiciones:
+            PostCondiciones: 
+            
+            </summary>
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsync">
             <summary>

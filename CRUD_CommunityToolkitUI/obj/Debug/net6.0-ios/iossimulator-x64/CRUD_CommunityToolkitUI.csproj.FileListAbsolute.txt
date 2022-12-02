@@ -295,3 +295,4 @@ A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkit
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-ios\iossimulator-x64\CRUD_CommunityToolkitUI.pdb
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-ios\iossimulator-x64\CRUD_CommunityToolkitUI.genruntimeconfig.cache
 A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-ios\iossimulator-x64\ref\CRUD_CommunityToolkitUI.dll
+A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\obj\Debug\net6.0-ios\iossimulator-x64\build-signature\signature

@@ -29,6 +29,8 @@
                     >
                     <Grid 
                         Padding="5">
+                        
+                        <!--Swipe view no funciona en WinUI-->
                         <SwipeView
                                 HorizontalOptions="Start">
 
