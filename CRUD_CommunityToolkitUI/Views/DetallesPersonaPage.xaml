@@ -61,7 +61,7 @@
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center"
                                 BindingContext="{x:Reference entryFoto}"
-                                Source="{Binding Path=Text}"/>
+                                Source="{Binding Source=Text}"/>
 
                         </Frame>
                         <VerticalStackLayout
@@ -118,7 +118,7 @@
                                     HorizontalOptions="Center"
                                     Date="{Binding PersonaSeleccionada.FechaNacimiento}"/>
                             </Frame>
-                            
+
                             <VerticalStackLayout 
                                 Grid.Row="4"
                                 Grid.ColumnSpan="3">
@@ -126,8 +126,6 @@
                                     Text="Url de su Fotografía"
                                     Grid.Column="1"
                                     Grid.Row="4"/>
-
-                                <!--https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800-->
                                 <Entry 
                                     x:Name="entryFoto"  
                                     Text="{Binding PersonaSeleccionada.Foto}"/>
@@ -138,20 +136,8 @@
                                 <Label Text="Teléfono"/>
                                 <Entry Text="{Binding PersonaSeleccionada.Telefono}"/>
                             </VerticalStackLayout>
-                           
+
                         </VerticalStackLayout>
-
-
-
-
-                        <!--
-               
-
-            
-                
-
-                
-            <Editor Text="{Binding Persona.Direccion}"/>-->
 
                     </Grid>
 

@@ -10,18 +10,15 @@ using System.Threading.Tasks;
 
 namespace CRUD_CommunityToolkitUI.ViewModels
 {
-	[QueryProperty("DepartamentoSeleccionado", nameof())]
+	[QueryProperty("DepartamentoSeleccionado", nameof(DepartamentoSeleccionado))]
 	public partial class clsVMEditarInsertarDepartamento : clsVMBase, IQueryAttributable
 	{
-
-		[ObservableProperty]
-		String nombreCompleto;
 
 		#region Atributtes
 		clsListadoDepartamentosBL deptBL;
 
 		[ObservableProperty]
-		clsDepartamento departaMentoSeleccionado;
+		clsDepartamento departamentoSeleccionado;
 
 		#endregion
 
@@ -61,24 +58,24 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			if (result.Equals(true))
 			{
 				clsGestionDepartamentosBL bl = new();
-				if (DepartaMentoSeleccionado.Id > 0)
+				if (DepartamentoSeleccionado.Id > 0)
 				{
 
-					bl.ed(DepartaMentoSeleccionado, DepartaMentoSeleccionado.Id);
-					Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {DepartaMentoSeleccionado.Nombre}", "OK");
+					bl.editDepartamentoBL(DepartamentoSeleccionado, DepartamentoSeleccionado.Id);
+					Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {DepartamentoSeleccionado.Nombre}", "OK");
 					Shell.Current.GoToAsync("..");
 				}
 				else
 				{
-					bl.insertarPersonaBL(DepartaMentoSeleccionado);
-					Shell.Current.DisplayAlert("Gestor Empleados", $"Se insertó el empleado {DepartaMentoSeleccionado.Nombre}", "OK");
+					bl.insertarDepartamentoBL(DepartamentoSeleccionado);
+					Shell.Current.DisplayAlert("Gestor Empleados", $"Se insertó el empleado {DepartamentoSeleccionado.Nombre}", "OK");
 				}
 			}
 		}
 
 		public void ApplyQueryAttributes(IDictionary<string, object> query)
 		{
-			throw new NotImplementedException();
+			DepartamentoSeleccionado = query["DepartamentoSeleccionado"] as clsDepartamento;
 		}
 		#endregion
 

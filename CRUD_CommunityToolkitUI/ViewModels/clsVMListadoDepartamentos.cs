@@ -2,15 +2,7 @@
 using BL.Listados;
 using CRUD_CommunityToolkitUI.ViewModels.Utilities;
 using CRUD_CommunityToolkitUI.Views;
-using DAL.Gestion;
 using Entities;
-using IntelliJ.Lang.Annotations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Android.Icu.Text.CaseMap;
 
 namespace CRUD_CommunityToolkitUI.ViewModels
 {
@@ -48,7 +40,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		public clsVMListadoDepartamentos()
 		{
-			Title = "Gestor de Personas";
+			Title = "Gestor de Departamentos";
 			this.bl = new();
 			this.ListadoDepartamentos = bl.getListadoDepartamentosBL();
 		}
@@ -73,7 +65,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// 
 		/// </summary>
 		[RelayCommand]
-		public async void DeletePersona()
+		public async void DeleteDepartamento()
 		{
 
 			var result = await Shell.Current.DisplayAlert("Gestor Empresa", "¿Está seguro de qesea eliminar el registro?", "Si", "No");
@@ -97,7 +89,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// <returns></returns>
 
 		[RelayCommand]
-		public async void GotoEditInsertPersonaAsync()
+		public async void GotoEditInsertDepartamentoAsync()
 		{
 			var p = new clsPersona();
 			var id = 0;
@@ -136,7 +128,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// </summary>
 		/// <returns></returns>
 		[RelayCommand]
-		async Task GetPersonasAsync()
+		async Task GetDepartamentoAsync()
 		{
 			//Si se está llamando a otro método
 			if (IsBusy)

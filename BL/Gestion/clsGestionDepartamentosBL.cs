@@ -53,7 +53,7 @@ namespace BL.Gestion
 		/// Precondiciones: Ninguna
 		/// Postcondiciones: Ninguna 
 		/// <returns></returns>
-		public bool editPersonaBL(clsDepartamento departamento, int id)
+		public bool editDepartamentoBL(clsDepartamento departamento, int id)
 		{
 			return dal.editDepartamento(departamento, id);
 		}

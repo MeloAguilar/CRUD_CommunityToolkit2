@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
              xmlns:model="clr-namespace:CRUD_CommunityToolkitUI.Models"
              x:DataType="vm:clsVMListadoDepartamentos"
+             xmlns:entities="clr-namespace:Entities;assembly=Entities"
              Title="{Binding Title}"
              x:Name="DepartamentosPage">
 
@@ -25,7 +26,7 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate 
-                    x:DataType="model:clsPersonaConDepartamento"
+                    x:DataType="entities:clsDepartamento"
                     >
                     <Grid 
                         Padding="5">
@@ -94,7 +95,7 @@
             Margin="0,0,40,40"
             CornerRadius="13"
             Grid.Column="1"
-            Command="{Binding GotoEditInsertPersonaAsyncCommand}"/>
+            Command="{Binding GotoEditInsertDepartamentoAsyncCommand}"/>
         <ActivityIndicator 
             IsVisible="{Binding IsBusy}"
             IsRunning="{Binding IsBusy}"
@@ -103,3 +104,4 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"/>
     </Grid>
+</ContentPage>

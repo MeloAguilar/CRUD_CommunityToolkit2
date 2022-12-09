@@ -4,6 +4,21 @@
         <name>CRUD_CommunityToolkitUI</name>
     </assembly>
     <members>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.GuardarDepartamento">
+            <summary>
+            Descripcion: Comando que se encarga de pedir a la capa BL que pida a la capa DAL acceso a la
+            insercion o edicion de un registro de la tabla Pêrsonas de la base de datos.
+            </summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.DepartamentoSeleccionado">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.departamentoSeleccionado"/>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.guardarDepartamentoCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.GuardarDepartamentoCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.GuardarDepartamentoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarDepartamento.GuardarDepartamento"/>.</summary>
+        </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleado">
             <summary>
             Descripcion: Comando que se encarga de pedir a la capa BL que pida a la capa DAL acceso a la
@@ -24,6 +39,62 @@
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleadoCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.GuardarEmpleado"/>.</summary>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DeleteDepartamento">
+            <summary>
+            
+            Descripcion: Método que se encarga de asegurar que el usuario quería realizar la accion y,
+            en caso positivo, énvia una peticion a la capa BL para que nos permita eliminar un registro de la 
+            tabla Personas de la base de datos.
+            Precondiciones:
+            PostCondiciones: 
+            
+            </summary>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsync">
+            <summary>
+            Comando que convierte personaSeleccionada en un 
+            objeto clsPersona y lo envía a la Pagina DetallesPage
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoAsync">
+            <summary>
+            Descripción: Comando que se encarga de rellenar la lista de personas a 
+            partir de una llamada a la función de la capa BL.
+            
+            Precondiciones: Ninguna
+            Postcondiciones: Ninguna
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DepartamentoSeleccionado">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.departamentoSeleccionado"/>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.ListadoDepartamentos">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.listadoDepartamentos"/>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.ListadoDepartamentosMostrado">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.listadoDepartamentosMostrado"/>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.deleteDepartamentoCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DeleteDepartamentoCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DeleteDepartamentoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DeleteDepartamento"/>.</summary>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.gotoEditInsertDepartamentoAsyncCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsyncCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsyncCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsync"/>.</summary>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.getDepartamentoCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoAsync"/>.</summary>
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersona">
             <summary>

@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace CRUD_CommunityToolkitUI.ViewModels
 {
-	[QueryProperty(nameof(PersonaSeleccionada), nameof(PersonaSeleccionada))]
-	public partial class clsVMEditarInsertarPersona : clsVMBase
+	[QueryProperty("PersonaSeleccionada", nameof(PersonaSeleccionada))]
+	public partial class clsVMEditarInsertarPersona : clsVMBase, IQueryAttributable
 	{
 
 		[ObservableProperty]
@@ -78,6 +78,12 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 					Shell.Current.DisplayAlert("Gestor Empleados", $"Se insertó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
 				}
 			}
+		}
+
+		public void ApplyQueryAttributes(IDictionary<string, object> query)
+		{
+			PersonaSeleccionada = query["PersonaSeleccionada"] as clsPersona;
+
 		}
 		#endregion
 
