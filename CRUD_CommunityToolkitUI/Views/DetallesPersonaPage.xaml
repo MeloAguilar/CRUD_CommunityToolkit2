@@ -10,12 +10,12 @@
     <ContentPage.BindingContext>
         <vm:clsVMEditarInsertarPersona/>
     </ContentPage.BindingContext>
-<ScrollView>
-    <VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
 
-        <Border 
+            <Border 
         StrokeShape="RoundRectangle 10,10,10,10">
-            
+
                 <VerticalStackLayout
                     Spacing="10"
                     Margin="6"
@@ -60,8 +60,7 @@
                                 WidthRequest="160"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center"
-                                BindingContext="{x:Reference entryFoto}"
-                                Source="{Binding Source=Text}"/>
+                                Source="{Binding PersonaSeleccionada.Foto}"/>
 
                         </Frame>
                         <VerticalStackLayout
@@ -95,9 +94,11 @@
                                 Padding="0"
                                 VerticalOptions="End">
                                 <Picker 
+                                  
                                     ItemsSource="{Binding ListaDepartamentos}" 
                                     ItemDisplayBinding="{Binding Nombre}"
-                                    SelectedItem="{Binding PersonaSeleccionada.IdDepartamento}"
+                                    SelectedIndex="{Binding DepartamentoSeleccionado.Id}"
+                                    SelectedItem="{Binding DepartamentoSeleccionado.Id, Mode=TwoWay}"
                                     VerticalOptions="End"
                                     VerticalTextAlignment="End"
                                     HorizontalTextAlignment="Center"/>
@@ -130,28 +131,41 @@
                                     x:Name="entryFoto"  
                                     Text="{Binding PersonaSeleccionada.Foto}"/>
                             </VerticalStackLayout>
-                            <VerticalStackLayout
+                            <HorizontalStackLayout
+                                Spacing="50"
                                 Grid.Row="5"
+                                Grid.ColumnSpan="3"
                                 Grid.RowSpan="3">
-                                <Label Text="Teléfono"/>
-                                <Entry Text="{Binding PersonaSeleccionada.Telefono}"/>
-                            </VerticalStackLayout>
+                                <VerticalStackLayout
+                                WidthRequest="100">
+                                    <Label Text="Teléfono"/>
+                                    <Entry Text="{Binding PersonaSeleccionada.Telefono}"/>
+                                </VerticalStackLayout>
 
+                                <VerticalStackLayout>
+                                    <Label Text="Dirección"  
+                                        
+                                            MaximumWidthRequest="70"/>
+                                    <Entry Text="{Binding PersonaSeleccionada.Direccion}"
+                                           
+                                            MaximumWidthRequest="170"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
                         </VerticalStackLayout>
 
                     </Grid>
 
                 </VerticalStackLayout>
-            
 
-        </Border>
 
-        <Button
+            </Border>
+
+            <Button
             VerticalOptions="End"
             HorizontalOptions="CenterAndExpand"
             Text="Guardar"
             Command="{Binding GuardarEmpleadoCommand}"
             />
-    </VerticalStackLayout>
-</ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

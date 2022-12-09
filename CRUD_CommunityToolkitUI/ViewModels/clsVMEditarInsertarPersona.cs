@@ -18,6 +18,9 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		[ObservableProperty]
 		String nombreCompleto;
 
+		[ObservableProperty]
+		clsDepartamento departamentoSeleccionado;
+
 		#region Atributtes
 		clsListadoDepartamentosBL deptBL;
 
@@ -39,6 +42,8 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		public clsVMEditarInsertarPersona()
 		{
+			DepartamentoSeleccionado = new clsDepartamento();
+
 			deptBL = new();
 			var depts = deptBL.getListadoDepartamentosBL();
 			foreach (var departamento in depts)
@@ -59,23 +64,38 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// insercion o edicion de un registro de la tabla Pêrsonas de la base de datos.
 		/// </summary>
 		[RelayCommand]
-		public void GuardarEmpleado()
+		async void GuardarEmpleado()
 		{
-			var result = Shell.Current.DisplayAlert("Gestor Empleados", "¿Guardar?", "Si", "No");
+			PersonaSeleccionada.IdDepartamento = DepartamentoSeleccionado.Id;
+			var result = await Shell.Current.DisplayAlert("Gestor Empleados", "¿Guardar?", "Si", "No");
 			if (result.Equals(true))
 			{
 				clsGestionPersonasBL bl = new clsGestionPersonasBL();
 				if (PersonaSeleccionada.Id > 0)
 				{
 
-					bl.editPersonaBL(PersonaSeleccionada, PersonaSeleccionada.Id);
-					Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
-					Shell.Current.GoToAsync("..");
+					if (bl.editPersonaBL(PersonaSeleccionada, PersonaSeleccionada.Id))
+					{
+						await Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+						await Shell.Current.GoToAsync("..");
+					}
+					else
+					{
+						await Shell.Current.DisplayAlert("EWRROR!", $"Np se modificó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+
+					}
 				}
 				else
 				{
-					bl.insertarPersonaBL(PersonaSeleccionada);
-					Shell.Current.DisplayAlert("Gestor Empleados", $"Se insertó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+
+					if (bl.insertarPersonaBL(PersonaSeleccionada))
+					{
+						await Shell.Current.DisplayAlert("ERROR!", $"No se insertó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+					}
+					else
+					{
+
+					}
 				}
 			}
 		}

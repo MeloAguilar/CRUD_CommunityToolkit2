@@ -11,23 +11,43 @@
     <ContentPage.BindingContext>
         <vm:clsVMListadoPersonas/>
     </ContentPage.BindingContext>
+    
     <Grid
        ColumnDefinitions="*,*"
         ColumnSpacing="5"
         RowDefinitions="*,Auto"
         RowSpacing="3">
+        <ScrollView
+            Grid.Row="0"
+            Grid.ColumnSpan="2">
+        <VerticalStackLayout
+          
+            HorizontalOptions="StartAndExpand">
+        <Frame
+            Margin="5,5,5,5"
+            Padding="0"
+            CornerRadius="50">
+        <SearchBar
+            x:Name="searchBar"
+            Text="{Binding Busqueda, Mode=TwoWay}"
+            SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"
+            HorizontalOptions="Start"
+            Margin="5"
+            SearchCommand="{Binding BuscarCommand}"/>
+        </Frame>
         <CollectionView 
             x:Name="coleccionPersonas"
-            ItemsSource="{Binding ListadoPersonas}"
+            ItemsSource="{Binding ListadoPersonasMostradas}"
             SelectionMode="Single"
             SelectedItem="{Binding PersonaSeleccionada}"
-            Grid.ColumnSpan="2">
+            HorizontalOptions="StartAndExpand">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate 
                     x:DataType="model:clsPersonaConDepartamento"
                     >
                     <Grid 
+                        HorizontalOptions="Fill"
                         Padding="5">
                         
                         <!--Swipe view no funciona en WinUI-->
@@ -52,9 +72,10 @@
                                     Command="{Binding BindingContext.GotoEditInsertPersonaAsyncCommand, Source={x:Reference Name=PersonasPage}}"/>
                             </SwipeView.LeftItems>
                             <Frame
-                            HeightRequest="125">
+                                HorizontalOptions="FillAndExpand"
+                            HeightRequest="125"
+                                Padding="1">
                                 <Grid
-                                Padding="0"
                                 ColumnDefinitions="125,*">
 
                                     <Image
@@ -91,7 +112,9 @@
 
 
         </CollectionView>
-        <Button
+        </VerticalStackLayout>
+    </ScrollView>
+    <Button
             Text="+"
             FontSize="30"
             HeightRequest="60"
@@ -100,7 +123,7 @@
             HorizontalOptions="End"
             Margin="0,0,40,40"
             CornerRadius="13"
-            Grid.Column="1"
+            Grid.ColumnSpan="2"
             Command="{Binding GotoEditInsertPersonaAsyncCommand}"/>
         <ActivityIndicator 
             IsVisible="{Binding IsBusy}"
@@ -110,5 +133,5 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"/>
     </Grid>
-
+    
 </ContentPage>

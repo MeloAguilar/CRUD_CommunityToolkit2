@@ -3,6 +3,7 @@ using BL.Listados;
 using CRUD_CommunityToolkitUI.ViewModels.Utilities;
 using CRUD_CommunityToolkitUI.Views;
 using Entities;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CRUD_CommunityToolkitUI.ViewModels
 {
@@ -14,6 +15,11 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		clsListadoDepartamentosBL bl;
 
 		clsGestionDepartamentosBL gestionBL;
+
+		[ObservableProperty]
+		string busqueda;
+
+
 
 		#endregion
 		[ObservableProperty]
@@ -43,6 +49,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			Title = "Gestor de Departamentos";
 			this.bl = new();
 			this.ListadoDepartamentos = bl.getListadoDepartamentosBL();
+			ListadoDepartamentosMostrado = ListadoDepartamentos;
 		}
 
 
@@ -79,7 +86,21 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		}
 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		[RelayCommand]
+		void Buscar()
+		{
+			if (Busqueda.IsNullOrEmpty())
+			{
+				listadoDepartamentosMostrado = ListadoDepartamentos;
+				return;
+			}
 
+			var listaAux = ListadoDepartamentos.ToList().FindAll(x => x.Nombre.ToLower().Contains(Busqueda.ToLower()));
+			ListadoDepartamentosMostrado = new ObservableCollection<clsDepartamento>(listaAux);
+		}
 
 		/// <summary>
 		/// Comando que convierte personaSeleccionada en un 

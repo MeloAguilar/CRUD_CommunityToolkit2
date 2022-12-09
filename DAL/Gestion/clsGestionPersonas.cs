@@ -49,11 +49,13 @@ namespace DAL.Gestion
 				cnn = miConexion.getConnection();
 				SqlCommand comando = new SqlCommand();
 				comando.Connection = cnn;
-				comando.CommandText = "Insert into personas values(@nombre, @apellidos, @telefono, @direccion, @fechaNac, @idDepartamento)";
+				comando.CommandText = "Insert into personas values(@nombre, @apellidos, @telefono, @direccion, @foto, @fechaNac, @idDepartamento)";
 				comando.Parameters.AddWithValue("@nombre", persona.Nombre);
 				comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
 				comando.Parameters.AddWithValue("@telefono", persona.Telefono);
 				comando.Parameters.AddWithValue("@direccion", persona.Direccion);
+				comando.Parameters.AddWithValue("@foto", persona.Foto);
+				comando.Parameters.AddWithValue("@fechaNac", persona.FechaNacimiento);
 				comando.Parameters.AddWithValue("@idDepartamento", persona.IdDepartamento);
 
 				comando.ExecuteNonQuery();
@@ -62,6 +64,7 @@ namespace DAL.Gestion
 			}
 			catch (Exception e)
 			{
+				throw e;
 				exito = false;
 			}
 			finally
@@ -164,11 +167,12 @@ namespace DAL.Gestion
 				cnn =  miConexion.getConnection();
 				SqlCommand comando = new SqlCommand();
 				comando.Connection = cnn;
-				comando.CommandText = "Update Personas set nombre = @nombre, apellidos = @apellidos, direccion = @direcion, telefono = @telefono, fechaNacimiento = @fechaNacimiento, foto = @foto, idDepartamento = @idDepartamento Where id = @id";
+				comando.CommandText = "Update Personas set nombre = @nombre, apellidos = @apellidos, direccion = @direccion, telefono = @telefono, fechaNacimiento = @fechaNacimiento, foto = @foto, idDepartamento = @idDepartamento Where id = @id";
 				comando.Parameters.AddWithValue("@id", id);
 				comando.Parameters.AddWithValue("@nombre", persona.Nombre);
 				comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
 				comando.Parameters.AddWithValue("@telefono", persona.Telefono);
+				comando.Parameters.AddWithValue("@idDepartamento", persona.IdDepartamento);
 				comando.Parameters.AddWithValue("@direccion", persona.Direccion);
 				comando.Parameters.AddWithValue("@fechaNacimiento", persona.FechaNacimiento);
 				comando.Parameters.AddWithValue("@foto", persona.Foto);
@@ -176,9 +180,9 @@ namespace DAL.Gestion
 
 				exito = true;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				exito = false;
+				throw e;
 			}
 			finally
 			{

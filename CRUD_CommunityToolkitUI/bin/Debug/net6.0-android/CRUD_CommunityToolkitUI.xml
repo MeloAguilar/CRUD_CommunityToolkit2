@@ -28,6 +28,9 @@
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.NombreCompleto">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.nombreCompleto"/>
         </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.DepartamentoSeleccionado">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.departamentoSeleccionado"/>
+        </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.PersonaSeleccionada">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMEditarInsertarPersona.personaSeleccionada"/>
         </member>
@@ -51,6 +54,11 @@
             
             </summary>
         </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.Buscar">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsync">
             <summary>
             Comando que convierte personaSeleccionada en un 
@@ -69,6 +77,9 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.Busqueda">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.busqueda"/>
+        </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DepartamentoSeleccionado">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.departamentoSeleccionado"/>
         </member>
@@ -83,6 +94,12 @@
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DeleteDepartamentoCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DeleteDepartamento"/>.</summary>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.buscarCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.BuscarCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.BuscarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.Buscar"/>.</summary>
         </member>
         <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.gotoEditInsertDepartamentoAsyncCommand">
             <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsyncCommand"/>.</summary>
@@ -104,6 +121,11 @@
             tabla Personas de la base de datos.
             Precondiciones:
             PostCondiciones: 
+            
+            </summary>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.Buscar">
+            <summary>
             
             </summary>
         </member>
@@ -140,6 +162,12 @@
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.PersonaSeleccionada">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.personaSeleccionada"/>
         </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.ListadoPersonasMostradas">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.listadoPersonasMostradas"/>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.Busqueda">
+            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.busqueda"/>
+        </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.ListadoPersonas">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.listadoPersonas"/>
         </member>
@@ -148,6 +176,12 @@
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersonaCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersona"/>.</summary>
+        </member>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.buscarCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.BuscarCommand"/>.</summary>
+        </member>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.BuscarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.Buscar"/>.</summary>
         </member>
         <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.gotoEditInsertPersonaAsyncCommand">
             <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.GotoEditInsertPersonaAsyncCommand"/>.</summary>

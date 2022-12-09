@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using CRUD_CommunityToolkitUI.ViewModels.Utilities;
 using CRUD_CommunityToolkitUI.Views;
 using Entities;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,13 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		[ObservableProperty]
 		[NotifyPropertyChangedFor(nameof(ListadoPersonas))]
 		clsPersonaConDepartamento personaSeleccionada;
+
+
+		[ObservableProperty]
+		ObservableCollection<clsPersonaConDepartamento> listadoPersonasMostradas;
+
+		[ObservableProperty]
+		String busqueda;
 
 		[ObservableProperty]
 		ObservableCollection<clsPersonaConDepartamento> listadoPersonas;
@@ -44,6 +52,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			Title = "Gestor de Personas";
 			this.bl = new();
 			this.ListadoPersonas = getListadoPersonasConNombreDepartamento();
+			ListadoPersonasMostradas = ListadoPersonas;
 		}
 
 
@@ -80,6 +89,24 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		}
 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		[RelayCommand]
+
+		void Buscar()
+		{
+			if (Busqueda.IsNullOrEmpty() || Busqueda.Equals(" "))
+			{
+				ListadoPersonasMostradas = ListadoPersonas;
+				return;
+			}
+
+			var listaAux = ListadoPersonas.ToList().FindAll(x => x.NombreCompleto.ToLower().Contains(Busqueda.ToLower()));
+			ListadoPersonasMostradas = new ObservableCollection<clsPersonaConDepartamento>(listaAux);
+			if (ListadoPersonasMostradas.Count == 0)
+				ListadoPersonasMostradas = ListadoPersonas;
+		}
 
 
 			/// <summary>
