@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_CommunityToolkitUI.Views.DetallesDepartamentoPage"
+             xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
+             x:DataType="vm"
+             Title="DetallesDepartamentoPage">
+    <VerticalStackLayout>
+
+        <Border 
+        StrokeShape="RoundRectangle 10,10,10,10">
+
+            <VerticalStackLayout
+                    Spacing="10"
+                    Margin="6"
+                    >
+
+                <Grid
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        RowSpacing="20"
+                        ColumnDefinitions="*,Auto,*"
+                        RowDefinitions="160,*,*,*,*">
+                    <BoxView
+                
+                            Grid.ColumnSpan="3"
+                            Color="Grey"
+                            CornerRadius="10"
+                            HeightRequest="160"
+                            HorizontalOptions="FillAndExpand"
+                            />
+                    <Label
+                            Text="{Binding PersonaSeleccionada.NombreCompleto}"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            TextColor="AliceBlue"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            />
+
+                    <Frame 
+                            Grid.Column="0"
+                            Margin="0,0,0,0"
+                            HeightRequest="160"
+                            WidthRequest="160"
+                            HorizontalOptions="Center"
+                            CornerRadius="80"
+                             Padding="0">
+                        <Image
+                                Aspect="AspectFill"
+                                HeightRequest="160"
+                                WidthRequest="160"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                BindingContext="{x:Reference entryFoto}"
+                                Source="{Binding Path=Text}"/>
+
+                    </Frame>
+                    <VerticalStackLayout
+                                Grid.Row="1">
+                        <Label Text="Nombre"/>
+                        <Entry 
+                                x:Name="entryNombre"
+                                Text="{Binding PersonaSeleccionada.Nombre}"/>
+
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                                Grid.Column="1"
+                                Grid.Row="1">
+                        <Label 
+                                Text="Apellidos"/>
+                        <Entry 
+                                x:Name="entryApellidos"
+                                Text="{Binding PersonaSeleccionada.Apellidos}"
+                                    Grid.Column="1"
+                                    Grid.Row="1"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout 
+                            Grid.Row="2"
+                            Grid.ColumnSpan="3">
+                        <Label 
+                                Text="Departamento"
+                                VerticalOptions="Start"
+                                Margin="0,0,5,0"/>
+
+                        <Frame
+                                Padding="0"
+                                VerticalOptions="End">
+                            <Picker 
+                                    ItemsSource="{Binding ListaDepartamentos}" 
+                                    ItemDisplayBinding="{Binding Nombre}"
+                                    SelectedItem="{Binding PersonaSeleccionada.IdDepartamento}"
+                                    VerticalOptions="End"
+                                    VerticalTextAlignment="End"
+                                    HorizontalTextAlignment="Center"/>
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout 
+                                Grid.Row="3"
+                                Grid.ColumnSpan="3">
+                        <Label Text="Fecha de nacimiento"
+                           />
+                        <Frame
+                                Padding="10,0,10,0"
+                                VerticalOptions="End"
+                                HorizontalOptions="Start">
+                            <DatePicker
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    Date="{Binding PersonaSeleccionada.FechaNacimiento}"/>
+                        </Frame>
+
+                        <VerticalStackLayout 
+                                Grid.Row="4"
+                                Grid.ColumnSpan="3">
+                            <Label 
+                                    Text="Url de su Fotografía"
+                                    Grid.Column="1"
+                                    Grid.Row="4"/>
+
+                            <!--https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800-->
+                            <Entry 
+                                    x:Name="entryFoto"  
+                                    Text="{Binding PersonaSeleccionada.Foto}"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout
+                                Grid.Row="5"
+                                Grid.RowSpan="3">
+                            <Label Text="Teléfono"/>
+                            <Entry Text="{Binding PersonaSeleccionada.Telefono}"/>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+
+
+
+                    <!--
+               
+
+            
+                
+
+                
+            <Editor Text="{Binding Persona.Direccion}"/>-->
+
+                </Grid>
+
+            </VerticalStackLayout>
+
+
+        </Border>
+
+        <Button
+            VerticalOptions="End"
+            HorizontalOptions="CenterAndExpand"
+            Text="Guardar"
+            Command="{Binding GuardarEmpleadoCommand}"
+            />
+    </VerticalStackLayout>
+</ContentPage>

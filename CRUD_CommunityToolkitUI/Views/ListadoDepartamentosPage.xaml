@@ -2,11 +2,104 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CRUD_CommunityToolkitUI.Views.ListadoDepartamentosPage"
-             Title="ListadoDepartamentosPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+             xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
+             xmlns:model="clr-namespace:CRUD_CommunityToolkitUI.Models"
+             x:DataType="vm:clsVMListadoDepartamentos"
+             Title="{Binding Title}"
+             x:Name="DepartamentosPage">
+
+    <ContentPage.BindingContext>
+        <vm:clsVMListadoDepartamentos/>
+    </ContentPage.BindingContext>
+    <Grid
+       ColumnDefinitions="*,*"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="3">
+        <CollectionView 
+            x:Name="coleccionPersonas"
+            ItemsSource="{Binding ListadoDepartamentosMostrado}"
+            SelectionMode="Single"
+            SelectedItem="{Binding DepartamentoSeleccionado}"
+            Grid.ColumnSpan="2">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate 
+                    x:DataType="model:clsPersonaConDepartamento"
+                    >
+                    <Grid 
+                        Padding="5">
+
+                        <!--Swipe view no funciona en WinUI-->
+                        <SwipeView
+                                HorizontalOptions="Start">
+
+                            <SwipeView.RightItems>
+
+                                <SwipeItem 
+                                    Text="Eliminar"
+                                    BackgroundColor="Red"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding BindingContext.DeleteDepartamentoCommand, Source={x:Reference Name=DepartamentosPage}}"/>
+
+                            </SwipeView.RightItems>
+
+                            <SwipeView.LeftItems>
+                                <SwipeItem 
+                                    Text="Editar"
+                                    BackgroundColor="Green"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding BindingContext.GotoEditInsertDepartamentoAsyncCommand, Source={x:Reference Name=DepartamentosPage}}"/>
+                            </SwipeView.LeftItems>
+                            <Frame
+                            HeightRequest="125">
+                                <Grid
+                                Padding="0"
+                                ColumnDefinitions="125,*">
+
+
+                                    <VerticalStackLayout
+                                        Grid.Column="1"
+                                        Padding="10"
+                                        Spacing="30"
+                                        VerticalOptions="Center">
+                                        <Label
+                                            Text="{Binding Nombre}"
+                                            FontAttributes="Bold"
+                                            FontSize="20"
+                                        />
+
+                                    </VerticalStackLayout>
+
+
+                                </Grid>
+                            </Frame>
+                        </SwipeView>
+
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+
+
+        </CollectionView>
+        <Button
+            Text="+"
+            FontSize="30"
+            HeightRequest="60"
+            WidthRequest="60"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Margin="0,0,40,40"
+            CornerRadius="13"
+            Grid.Column="1"
+            Command="{Binding GotoEditInsertPersonaAsyncCommand}"/>
+        <ActivityIndicator 
+            IsVisible="{Binding IsBusy}"
+            IsRunning="{Binding IsBusy}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"/>
+    </Grid>

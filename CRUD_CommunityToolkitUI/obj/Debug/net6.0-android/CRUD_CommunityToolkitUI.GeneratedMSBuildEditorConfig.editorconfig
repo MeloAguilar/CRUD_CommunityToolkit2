@@ -33,6 +33,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = CRUD_CommunityToolkitUI.Re
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[A:/DAM/DEINT/CRUD_PERSONAS_EMPLEADOS/CRUD_CommunityToolkit/CRUD_CommunityToolkitUI/Views/DetallesDepartamentoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CRUD_CommunityToolkitUI.Views.DetallesDepartamentoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DetallesDepartamentoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DetallesDepartamentoPage.xaml
+
 [A:/DAM/DEINT/CRUD_PERSONAS_EMPLEADOS/CRUD_CommunityToolkit/CRUD_CommunityToolkitUI/Views/DetallesPersonaPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CRUD_CommunityToolkitUI.Views.DetallesPersonaPage.xaml
