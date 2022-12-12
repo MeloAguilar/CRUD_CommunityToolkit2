@@ -7,11 +7,7 @@ public partial class ListaPersonasPage : ContentPage
 		InitializeComponent();
 	}
 
-	protected override bool OnBackButtonPressed()
-	{
-		App.Current.MainPage = new MainPage();
-		return base.OnBackButtonPressed();
-	}
+	
 
 	protected override void OnAppearing()
 	{

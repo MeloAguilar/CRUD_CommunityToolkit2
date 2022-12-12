@@ -29,11 +29,10 @@
             CornerRadius="50">
         <SearchBar
             x:Name="searchBar"
+            IsEnabled="{Binding IsBusy}"
             Text="{Binding Busqueda, Mode=TwoWay}"
-            SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"
             HorizontalOptions="Start"
-            Margin="5"
-            SearchCommand="{Binding BuscarCommand}"/>
+            Margin="5"/>
         </Frame>
         <CollectionView 
             x:Name="coleccionPersonas"

@@ -77,7 +77,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 					if (bl.editPersonaBL(PersonaSeleccionada, PersonaSeleccionada.Id))
 					{
 						await Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
-						await Shell.Current.GoToAsync("..");
+						
 					}
 					else
 					{
@@ -88,15 +88,13 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 				else
 				{
 
-					if (bl.insertarPersonaBL(PersonaSeleccionada))
+					if (!bl.insertarPersonaBL(PersonaSeleccionada))
 					{
 						await Shell.Current.DisplayAlert("ERROR!", $"No se insertó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
-					}
-					else
-					{
-
+						await Shell.Current.GoToAsync("..");
 					}
 				}
+				await Shell.Current.GoToAsync("..");
 			}
 		}
 

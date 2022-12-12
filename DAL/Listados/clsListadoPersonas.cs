@@ -18,11 +18,22 @@ namespace DAL.Listados
 		public clsListadoPersonas()
 		{
 			miConexion = new clsMiConexion();
+			//Comprobamos que se pueda abrir la conexion con el servidor
+			try
+			{
+				var cnn = miConexion.getConnection();
+			}
+			catch (SqlException e)
+			{
+				throw e;
+			}
 		}
 		/// <summary>
 		/// Método que se encarga de rellenar una lista de objetos tipo clsPersona
 		/// a partir de una llamada a la base de datos.
 		/// 
+		/// Precondiciones: La Propiedad de la clase 
+		/// Postcondiciones:
 		/// </summary>
 		/// <returns></returns>
 		public List<clsPersona> getListadoCompletoPersonas() {
@@ -31,8 +42,7 @@ namespace DAL.Listados
 				return lista;
 
 			SqlConnection cnn = null;
-			try
-			{
+			
 				cnn = miConexion.getConnection();
 				SqlCommand cmd = new SqlCommand();
 				SqlDataReader miLector;
@@ -50,18 +60,13 @@ namespace DAL.Listados
 
 					}
 				}
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-			finally
-			{
+			
+			
 				if (cnn!=null)
 				{
 					miConexion.closeConnection(ref cnn);
 				}
-			}
+		
 
 
 

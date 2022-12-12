@@ -49,14 +49,22 @@
             Descripcion: Método que se encarga de asegurar que el usuario quería realizar la accion y,
             en caso positivo, énvia una peticion a la capa BL para que nos permita eliminar un registro de la 
             tabla Personas de la base de datos.
-            Precondiciones:
-            PostCondiciones: 
+            Precondiciones: Ninguna
+            PostCondiciones: Ninguna
             
             </summary>
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.Buscar">
             <summary>
+            Comando que se encarga de realizar la accion del comando de busqueda de la vista.
             
+            Comprueba que la app no esté ocupada con otra peticion, comprueba que el string de busqueda no este vacio o sea null, ademas de no ser un espacio.
+            Realiza una busqueda en el listadoDepartamentos dondde se contenga la propiedad la clase busqueda, la cual solo servirá para almacenar esta busqueda
+            y llamar a el comando siempre que se notifique un cambio en ella, cosa que pasará siempre que se modifique el atributo text de la searchbar a la que 
+            se encuentra bindeada
+            
+            Precondiciones: Ninguna
+            Postcondiciones: Ninguna
             </summary>
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsync">
@@ -64,10 +72,13 @@
             Comando que convierte personaSeleccionada en un 
             objeto clsPersona y lo envía a la Pagina DetallesPage
             
+            Precondiciones: Si DepartamentoSeleccionado es null, se enviará un objeto clsDepartamento vacío
+            				En caso de ser distinto de null se enviará un objeto clsPersona con id = PersonaSeleccionada.Id
+            Postcondiciones: Ninguna.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoAsync">
+        <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentosAsync">
             <summary>
             Descripción: Comando que se encarga de rellenar la lista de personas a 
             partir de una llamada a la función de la capa BL.
@@ -76,9 +87,6 @@
             Postcondiciones: Ninguna
             </summary>
             <returns></returns>
-        </member>
-        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.Busqueda">
-            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.busqueda"/>
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.DepartamentoSeleccionado">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.departamentoSeleccionado"/>
@@ -107,11 +115,11 @@
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsyncCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GotoEditInsertDepartamentoAsync"/>.</summary>
         </member>
-        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.getDepartamentoCommand">
-            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoCommand"/>.</summary>
+        <member name="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.getDepartamentosCommand">
+            <summary>The backing field for <see cref="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentosCommand"/>.</summary>
         </member>
-        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentoAsync"/>.</summary>
+        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoDepartamentos.GetDepartamentosAsync"/>.</summary>
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.DeletePersona">
             <summary>
@@ -126,6 +134,7 @@
         </member>
         <member name="M:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.Buscar">
             <summary>
+            Comando que se encarga de realizar la accion del buscador de la vista.
             
             </summary>
         </member>
@@ -164,9 +173,6 @@
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.ListadoPersonasMostradas">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.listadoPersonasMostradas"/>
-        </member>
-        <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.Busqueda">
-            <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.busqueda"/>
         </member>
         <member name="P:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.ListadoPersonas">
             <inheritdoc cref="F:CRUD_CommunityToolkitUI.ViewModels.clsVMListadoPersonas.listadoPersonas"/>
@@ -248,6 +254,15 @@
             Defines the method to be called when the command is invoked. 
             </summary>
             <param name="parameter">This parameter will always be ignored.</param>
+        </member>
+        <member name="M:CRUD_CommunityToolkitUI.Views.MainPage.Button_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que nos lleva al tab si se introdujo algo en los entrys de nombre y pass.
+            No he querido hacer un viewmodel para el inicio de sesion porque hubiese tenido que crear otra tabla en la base de datos
+            y como este login no era esencial solo comprobaré que tenga contenido en el campo text tanto eName como ePass.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
     </members>
 </doc>

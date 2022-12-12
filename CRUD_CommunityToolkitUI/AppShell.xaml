@@ -6,17 +6,32 @@
     xmlns:local="clr-namespace:CRUD_CommunityToolkitUI.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    
     <TabBar>
-        <Tab Title="Empleados" Icon="user_icon">
+        <!--
+        
+        No conseguí meter el login dentro del Shell por lo que no hay vuelta atras una vez que te logeas
+        <Tab Title="Home" Icon="...">
             <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        
+        -->
+        
+        <Tab Title="Empleados" Icon="user_icon" Route="Personas">
+            <ShellContent
+                
                 ContentTemplate="{DataTemplate local:ListaPersonasPage}"/>
         </Tab>
         <Tab
-            Title="Departamentos" Icon="dept_icon">
+            Title="Departamentos" Icon="dept_icon" Route="Departamentos"
+            >
             <ShellContent
+                
                 ContentTemplate="{DataTemplate local:ListadoDepartamentosPage}"/>
         </Tab>
+
+     
     </TabBar>
 
+    
 </Shell>

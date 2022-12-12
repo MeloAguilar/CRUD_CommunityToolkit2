@@ -97,8 +97,8 @@
                                   
                                     ItemsSource="{Binding ListaDepartamentos}" 
                                     ItemDisplayBinding="{Binding Nombre}"
-                                    SelectedIndex="{Binding DepartamentoSeleccionado.Id}"
-                                    SelectedItem="{Binding DepartamentoSeleccionado.Id, Mode=TwoWay}"
+                                    SelectedIndex="{Binding PersonaSeleccionada.IdDepartamento}"
+                                    SelectedItem="{Binding DepartamentoSeleccionado, Mode=TwoWay}"
                                     VerticalOptions="End"
                                     VerticalTextAlignment="End"
                                     HorizontalTextAlignment="Center"/>
@@ -108,8 +108,7 @@
                         <VerticalStackLayout 
                                 Grid.Row="3"
                                 Grid.ColumnSpan="3">
-                            <Label Text="Fecha de nacimiento"
-                           />
+                            <Label Text="Fecha de nacimiento"/>
                             <Frame
                                 Padding="10,0,10,0"
                                 VerticalOptions="End"

@@ -160,7 +160,7 @@ namespace DAL.Gestion
 				cnn =  miConexion.getConnection();
 				SqlCommand comando = new SqlCommand();
 				comando.Connection = cnn;
-				comando.CommandText = "Update Personas set nombre = @nombre Where id = @id";
+				comando.CommandText = "Update Departamentos set nombre = @nombre Where id = @id";
 				comando.Parameters.AddWithValue("@id", id);
 				comando.Parameters.AddWithValue("@nombre", departamento.Nombre);
 				comando.ExecuteNonQuery();
@@ -172,6 +172,7 @@ namespace DAL.Gestion
 				exito = false;
 			}
 			finally
+			
 			{
 				if (cnn != null)
 				{

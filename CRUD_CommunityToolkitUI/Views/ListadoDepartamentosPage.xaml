@@ -17,74 +17,93 @@
         ColumnSpacing="5"
         RowDefinitions="*,Auto"
         RowSpacing="3">
-        <CollectionView 
+        <ScrollView
+            Grid.Row="0"
+            Grid.ColumnSpan="2">
+            <VerticalStackLayout
+          
+            HorizontalOptions="StartAndExpand">
+                <Frame
+            Margin="5,5,5,5"
+            Padding="0"
+            CornerRadius="50">
+                    <SearchBar
+            x:Name="searchBar"
+            IsEnabled="{Binding IsBusy}"
+            Text="{Binding Busqueda, Mode=TwoWay}"
+            HorizontalOptions="Start"
+            Margin="5"/>
+                </Frame>
+                <CollectionView 
             x:Name="coleccionPersonas"
             ItemsSource="{Binding ListadoDepartamentosMostrado}"
             SelectionMode="Single"
             SelectedItem="{Binding DepartamentoSeleccionado}"
             Grid.ColumnSpan="2">
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate 
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate 
                     x:DataType="entities:clsDepartamento"
                     >
-                    <Grid 
+                            <Grid 
                         Padding="5">
 
-                        <!--Swipe view no funciona en WinUI-->
-                        <SwipeView
+                                <!--Swipe view no funciona en WinUI-->
+                                <SwipeView
                                 HorizontalOptions="Start">
 
-                            <SwipeView.RightItems>
+                                    <SwipeView.RightItems>
 
-                                <SwipeItem 
+                                        <SwipeItem 
                                     Text="Eliminar"
                                     BackgroundColor="Red"
                                     CommandParameter="{Binding .}"
                                     Command="{Binding BindingContext.DeleteDepartamentoCommand, Source={x:Reference Name=DepartamentosPage}}"/>
 
-                            </SwipeView.RightItems>
+                                    </SwipeView.RightItems>
 
-                            <SwipeView.LeftItems>
-                                <SwipeItem 
+                                    <SwipeView.LeftItems>
+                                        <SwipeItem 
                                     Text="Editar"
                                     BackgroundColor="Green"
                                     CommandParameter="{Binding .}"
                                     Command="{Binding BindingContext.GotoEditInsertDepartamentoAsyncCommand, Source={x:Reference Name=DepartamentosPage}}"/>
-                            </SwipeView.LeftItems>
-                            <Frame
+                                    </SwipeView.LeftItems>
+                                    <Frame
                             HeightRequest="125">
-                                <Grid
+                                        <Grid
                                 Padding="0"
                                 ColumnDefinitions="125,*">
 
 
-                                    <VerticalStackLayout
+                                            <VerticalStackLayout
                                         Grid.Column="1"
                                         Padding="10"
                                         Spacing="30"
                                         VerticalOptions="Center">
-                                        <Label
+                                                <Label
                                             Text="{Binding Nombre}"
                                             FontAttributes="Bold"
                                             FontSize="20"
                                         />
 
-                                    </VerticalStackLayout>
+                                            </VerticalStackLayout>
 
 
-                                </Grid>
-                            </Frame>
-                        </SwipeView>
+                                        </Grid>
+                                    </Frame>
+                                </SwipeView>
 
 
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
 
 
 
-        </CollectionView>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
         <Button
             Text="+"
             FontSize="30"
@@ -96,12 +115,14 @@
             CornerRadius="13"
             Grid.Column="1"
             Command="{Binding GotoEditInsertDepartamentoAsyncCommand}"/>
-        <ActivityIndicator 
+                <ActivityIndicator 
             IsVisible="{Binding IsBusy}"
             IsRunning="{Binding IsBusy}"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="CenterAndExpand"
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"/>
+                
     </Grid>
+   
 </ContentPage>
