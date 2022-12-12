@@ -52,24 +52,37 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// insercion o edicion de un registro de la tabla Pêrsonas de la base de datos.
 		/// </summary>
 		[RelayCommand]
-		public void GuardarDepartamento()
+		async void GuardarDepartamento()
 		{
-			var result = Shell.Current.DisplayAlert("Gestor Empleados", "¿Guardar?", "Si", "No");
+			
+			var result = await Shell.Current.DisplayAlert("Gestor Empleados", "¿Guardar?", "Si", "No");
 			if (result.Equals(true))
 			{
-				clsGestionDepartamentosBL bl = new();
+				var bl = new clsGestionDepartamentosBL();
 				if (DepartamentoSeleccionado.Id > 0)
 				{
 
-					bl.editDepartamentoBL(DepartamentoSeleccionado, DepartamentoSeleccionado.Id);
-					Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {DepartamentoSeleccionado.Nombre}", "OK");
-					Shell.Current.GoToAsync("..");
+					if (bl.editDepartamentoBL(DepartamentoSeleccionado, DepartamentoSeleccionado.Id))
+					{
+						await Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el departamento {DepartamentoSeleccionado.Nombre}", "OK");
+
+					}
+					else
+					{
+						await Shell.Current.DisplayAlert("ERROR!", $"No se modificó el departamento {DepartamentoSeleccionado.Nombre}", "OK");
+
+					}
 				}
 				else
 				{
-					bl.insertarDepartamentoBL(DepartamentoSeleccionado);
-					Shell.Current.DisplayAlert("Gestor Empleados", $"Se insertó el empleado {DepartamentoSeleccionado.Nombre}", "OK");
+
+					if (!bl.insertarDepartamentoBL(DepartamentoSeleccionado))
+					{
+						await Shell.Current.DisplayAlert("ERROR!", $"No se insertó el departamento {DepartamentoSeleccionado.Nombre}", "OK");
+						await Shell.Current.GoToAsync("..");
+					}
 				}
+				await Shell.Current.GoToAsync("..");
 			}
 		}
 

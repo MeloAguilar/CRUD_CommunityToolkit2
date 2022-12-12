@@ -40,7 +40,7 @@ namespace BL.Gestion
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public bool deletePersonaBL(int id)
+		public bool deleteDepartamentoBL(int id)
 		{
 			return dal.deleteDepartamento(id);
 		}

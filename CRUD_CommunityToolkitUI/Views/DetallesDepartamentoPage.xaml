@@ -4,7 +4,7 @@
              x:Class="CRUD_CommunityToolkitUI.Views.DetallesDepartamentoPage"
              xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
              x:DataType="vm:clsVMEditarInsertarDepartamento"
-             Title="DetallesDepartamentoPage">
+             Title="Detalles Departamento">
     <ContentPage.BindingContext>
         <vm:clsVMEditarInsertarDepartamento/>
     </ContentPage.BindingContext>
@@ -32,19 +32,19 @@
                             HeightRequest="160"
                             HorizontalOptions="FillAndExpand"
                             />
-                    
-                    <Label
+
+                    <Entry
+                        Placeholder="Escribe aqui..."
                             Text="{Binding DepartamentoSeleccionado.Nombre}"
                             FontAttributes="Bold"
                             FontSize="25"
                             Grid.ColumnSpan="3"
-                            TextColor="AliceBlue"
-                        Grid.Row="2"
+                            Grid.Row="0"
                             VerticalOptions="Center"
                             HorizontalOptions="Center"
                             />
 
-               
+
 
                 </Grid>
 

@@ -5,10 +5,46 @@
              Title="MainPage"
              BackgroundColor="Grey"
              Shell.TabBarIsVisible="False">
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Button Text="A Personas"
+    <AbsoluteLayout>
+        <Label
+            AbsoluteLayout.LayoutBounds="60,80,300,50"
+            Text="Gestor Empresarial"
+            FontSize="30"
+            FontAttributes="Bold"/>
+        <HorizontalStackLayout
+            AbsoluteLayout.LayoutBounds="135,250,150,50"
+            Spacing="10">
+            <Label
+                Text="usuario"
                 VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Clicked="Button_Clicked"/>
-    </VerticalStackLayout>
+                FontSize="16"
+                FontAttributes="Bold"/>
+            <Entry 
+                x:Name="eName"
+                Placeholder="Escribe aquí..."
+                VerticalOptions="CenterAndExpand"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout
+            AbsoluteLayout.LayoutBounds="109,300,150,50"
+            Spacing="10">
+            <Label 
+                Text="contraseña"
+                VerticalOptions="Center"
+                FontSize="16"
+                FontAttributes="Bold"/>
+            <Entry  
+                IsPassword="True"
+                x:Name="ePass"
+                VerticalOptions="Center"
+                Placeholder="Escribe aquí..."/>
+        </HorizontalStackLayout>
+
+
+        <Button 
+            AbsoluteLayout.LayoutBounds="135,500,150,50"
+            Text="Log in"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Clicked="Button_Clicked"/>
+    </AbsoluteLayout>
 </ContentPage>

@@ -16,8 +16,8 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		clsGestionDepartamentosBL gestionBL;
 
-		[ObservableProperty]
-		string busqueda;
+
+		private string busqueda;
 
 
 
@@ -35,7 +35,20 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 
 
+		public String Busqueda
+		{
+			get { return busqueda; }
 
+			set
+			{
+				if (value != busqueda)
+				{
+					busqueda = value;
+					OnPropertyChanged();
+					Buscar();
+				}
+			}
+		}
 
 
 		#endregion
@@ -48,6 +61,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		{
 			Title = "Gestor de Departamentos";
 			this.bl = new();
+			this.gestionBL = new();
 			this.ListadoDepartamentos = bl.getListadoDepartamentosBL();
 			ListadoDepartamentosMostrado = ListadoDepartamentos;
 		}
@@ -67,8 +81,8 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// Descripcion: Método que se encarga de asegurar que el usuario quería realizar la accion y,
 		/// en caso positivo, énvia una peticion a la capa BL para que nos permita eliminar un registro de la 
 		/// tabla Personas de la base de datos.
-		/// Precondiciones:
-		/// PostCondiciones: 
+		/// Precondiciones: Ninguna
+		/// PostCondiciones: Ninguna
 		/// 
 		/// </summary>
 		[RelayCommand]
@@ -78,7 +92,8 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			var result = await Shell.Current.DisplayAlert("Gestor Empresa", "¿Está seguro de qesea eliminar el registro?", "Si", "No");
 			if (result.Equals(true))
 			{
-				ListadoDepartamentosMostrado.Remove(DepartamentoSeleccionado);
+				gestionBL.deleteDepartamentoBL(DepartamentoSeleccionado.Id);
+				await GetDepartamentosAsync();
 				await Shell.Current.DisplayAlert("Gestor Empresa", "Se eliminó el registro", "OK");
 			}
 			DepartamentoSeleccionado = null;
@@ -87,41 +102,61 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 
 		/// <summary>
+		/// Comando que se encarga de realizar la accion del comando de busqueda de la vista.
 		/// 
+		/// Comprueba que la app no esté ocupada con otra peticion, comprueba que el string de busqueda no este vacio o sea null, ademas de no ser un espacio.
+		/// Realiza una busqueda en el listadoDepartamentos dondde se contenga la propiedad la clase busqueda, la cual solo servirá para almacenar esta busqueda
+		/// y llamar a el comando siempre que se notifique un cambio en ella, cosa que pasará siempre que se modifique el atributo text de la searchbar a la que 
+		/// se encuentra bindeada
+		/// 
+		/// Precondiciones: Ninguna
+		/// Postcondiciones: Ninguna
 		/// </summary>
 		[RelayCommand]
 		void Buscar()
 		{
-			if (Busqueda.IsNullOrEmpty())
-			{
-				listadoDepartamentosMostrado = ListadoDepartamentos;
+			if (IsBusy)
 				return;
-			}
 
-			var listaAux = ListadoDepartamentos.ToList().FindAll(x => x.Nombre.ToLower().Contains(Busqueda.ToLower()));
-			ListadoDepartamentosMostrado = new ObservableCollection<clsDepartamento>(listaAux);
+			IsBusy = true;
+			if (Busqueda.IsNullOrEmpty() || Busqueda.Equals(" "))
+			{
+				ListadoDepartamentosMostrado = ListadoDepartamentos;
+
+			}
+			else
+			{
+				var listaAux = ListadoDepartamentos.ToList().FindAll(x => x.Nombre.ToLower().Contains(Busqueda.ToLower()));
+				ListadoDepartamentosMostrado = new ObservableCollection<clsDepartamento>(listaAux);
+
+			}
+			IsBusy = false;
+
 		}
 
 		/// <summary>
 		/// Comando que convierte personaSeleccionada en un 
 		/// objeto clsPersona y lo envía a la Pagina DetallesPage
 		/// 
+		/// Precondiciones: Si DepartamentoSeleccionado es null, se enviará un objeto clsDepartamento vacío
+		///					En caso de ser distinto de null se enviará un objeto clsPersona con id = PersonaSeleccionada.Id
+		/// Postcondiciones: Ninguna.
 		/// </summary>
 		/// <returns></returns>
 
 		[RelayCommand]
 		public async void GotoEditInsertDepartamentoAsync()
 		{
-			var p = new clsPersona();
+			var p = new clsDepartamento();
 			var id = 0;
 			if (DepartamentoSeleccionado is not null)
 			{
 				id = DepartamentoSeleccionado.Id;
-				clsGestionPersonasBL gestionBL = new();
+				clsGestionDepartamentosBL gestionBL = new();
 
 
 
-				p = gestionBL.getPersonaByIdBL(id);
+				p = DepartamentoSeleccionado;
 
 				//Navegamos a la pagina de detalles y le pasamos la persona coN un Dictionary
 				//Para poder pasar el objeto
@@ -149,7 +184,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// </summary>
 		/// <returns></returns>
 		[RelayCommand]
-		async Task GetDepartamentoAsync()
+		async Task GetDepartamentosAsync()
 		{
 			//Si se está llamando a otro método
 			if (IsBusy)
