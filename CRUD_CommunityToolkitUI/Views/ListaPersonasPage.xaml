@@ -8,10 +8,6 @@
              Title="{Binding Title}"
              x:Name="PersonasPage">
 
-    <ContentPage.BindingContext>
-        <vm:clsVMListadoPersonas/>
-    </ContentPage.BindingContext>
-    
     <Grid
        ColumnDefinitions="*,*"
         ColumnSpacing="5"
@@ -31,6 +27,7 @@
             x:Name="searchBar"
             IsEnabled="{Binding IsBusy}"
             Text="{Binding Busqueda, Mode=TwoWay}"
+     
             HorizontalOptions="Start"
             Margin="5"/>
         </Frame>
@@ -79,7 +76,7 @@
 
                                     <Image
                                         Aspect="AspectFill"
-                                        Source="{Binding Foto}"
+                                        Source="{Binding foto}"
                                         WidthRequest="125"
                                         HeightRequest="125"/>
 
@@ -89,7 +86,7 @@
                                         Spacing="30"
                                         VerticalOptions="Center">
                                         <Label
-                                            Text="{Binding NombreCompleto}"
+                                            Text="{Binding nombreCompleto}"
                                             FontAttributes="Bold"
                                             FontSize="20"
                                         />

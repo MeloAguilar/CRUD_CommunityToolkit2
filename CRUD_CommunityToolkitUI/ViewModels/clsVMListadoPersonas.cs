@@ -58,6 +58,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 					//Notifico el cambio manualmente y llamo al comando Buscar ya que
 					//esta propiedad solo se tocará cuando se introduzca texto en la barra de busqueda
 					OnPropertyChanged();
+
 					Buscar();
 				}
 			}
@@ -66,24 +67,43 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		#region Constructors
 
-		public clsVMListadoPersonas()
+
+
+		private clsVMListadoPersonas(ObservableCollection<clsPersonaConDepartamento> Data)
 		{
 			Title = "Gestor de Personas";
 			//Recogemos la excepcion que se lanza desde clsMiConexion en caso de no tener acceso a la base de datos
 			try
 			{
 				this.bl = new();
+				
 			}
 			catch (SqlException e)
 			{
 				Shell.Current.DisplayAlert("ERROR!", $"No se pudo acceder a los datos, vuelva a intentarlo más tarde \n codigo de error: {e.Message}", "OK");
 			}
-
-			this.ListadoPersonas = getListadoPersonasConNombreDepartamento();
+			this.ListadoPersonas = Data;
 			ListadoPersonasMostradas = ListadoPersonas;
 		}
 
 
+		/// <summary>
+		/// Método que instancia el ViewModel y 
+		/// </summary>
+		/// <returns></returns>
+		public static async Task<clsVMListadoPersonas> CreateAsync()
+		{
+			ObservableCollection<clsPersonaConDepartamento> tmpData = null;
+			try
+			{
+				tmpData = await getListadoPersonasConNombreDepartamento();
+			}
+			catch (Exception e)
+			{
+				throw e;
+			}
+			return new clsVMListadoPersonas(tmpData);
+		}
 
 
 
@@ -123,7 +143,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// </summary>
 		[RelayCommand]
 
-		void Buscar()
+		async void Buscar()
 		{
 			//Compruebo que le programa no esté ocupado para no saturarlo
 			if (IsBusy)
@@ -140,7 +160,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			//string de búsqueda, los almacenamos en ListadoPersonasMostradas
 			else
 			{
-				var listaAux = ListadoPersonas.ToList().FindAll(x => x.NombreCompleto.ToLower().Contains(Busqueda.ToLower()));
+				var listaAux = ListadoPersonas.ToList().FindAll(x => x.nombreCompleto.ToLower().Contains(Busqueda.ToLower()));
 				ListadoPersonasMostradas = new ObservableCollection<clsPersonaConDepartamento>(listaAux);
 				IsBusy = false;
 			}
@@ -204,10 +224,11 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 				IsBusy = true;
 
 				//Llamamos a la capa BL para que nos envíe un listado de objetos clsPersona
-				var personas = getListadoPersonasConNombreDepartamento();
+				var personas = await getListadoPersonasConNombreDepartamento();
 
 				if (ListadoPersonas.Count > 0)
 					ListadoPersonas.Clear();
+
 
 
 				foreach (var p in personas)
@@ -215,7 +236,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 				//Ordeno la lista por idDepartamento
 				var first = ListadoPersonas.OrderBy(m =>
-				m.IdDepartamento).FirstOrDefault();
+				m.idDepartamento).FirstOrDefault();
 
 				//Compruebo que el preimero no sea null
 				if (first == null)
@@ -250,17 +271,18 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// PostCondiciones: Ninguna
 		/// </summary>
 		/// <returns></returns>
-		private ObservableCollection<clsPersonaConDepartamento> getListadoPersonasConNombreDepartamento()
+		private static async Task<ObservableCollection<clsPersonaConDepartamento>> getListadoPersonasConNombreDepartamento()
 		{
+			
 
 			ObservableCollection<clsPersonaConDepartamento> personas = new();
 			clsListadoDepartamentosBL deptBL = new();
 
 			//Recojo un listado de departamentos para poder saber el nombre
-			var departamentosList = deptBL.getListadoDepartamentosBL();
+			var departamentosList = await clsListadoDepartamentosBL.getListadoDepartamentosBL();
 
 			//Recojo la lista de personas
-			var personasList = bl.getListadoCompletoPersonasBL();
+			var personasList = await clsListadoPersonasBL.getListadoCompletoPersonasBL();
 
 
 			//Recorro la lista completa de personas
@@ -273,12 +295,12 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 					//Genero un departamento auxiliar para que el código sea más corto
 					var dpt = departamentosList[i];
 					//Si el idDepartamento que he recogido del bucle for es igual al idDepartamento de la persona recogida en el bucle foreach
-					if (p.IdDepartamento == dpt.Id)
+					if (p.idDepartamento == dpt.id)
 					{
 						//Establezco que se encontró el departamento
 						isDptFind = true;
 						//Convierto la persona en una que contenga el nombre del departamento
-						var pc = new clsPersonaConDepartamento(p.Id, p.Nombre, p.Apellidos, p.Foto, dpt.Nombre);
+						var pc = new clsPersonaConDepartamento(p.id, p.nombre, p.apellidos, p.foto, dpt.nombre);
 
 						//Añado el objeto clsPersonaConDepartamento a la lista
 						personas.Add(pc);

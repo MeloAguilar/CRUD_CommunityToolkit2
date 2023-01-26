@@ -57,14 +57,41 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 		#region Constructors
 
-		public clsVMListadoDepartamentos()
+
+
+
+		private clsVMListadoDepartamentos(ObservableCollection<clsDepartamento> Data)
 		{
 			Title = "Gestor de Departamentos";
 			this.bl = new();
 			this.gestionBL = new();
-			this.ListadoDepartamentos = bl.getListadoDepartamentosBL();
+			ListadoDepartamentos = Data;
 			ListadoDepartamentosMostrado = ListadoDepartamentos;
+			IsBusy = false;
 		}
+
+
+		/// <summary>
+		/// Método que instancia el ViewModel y realiza la llamada asíncrona para la obtencion de un listado
+		/// de objetos tipo clsDepartamento, gestionado por la capa BL.
+		/// </summary>
+		/// <returns>Task'clsVMListadoDepartamentos'</returns>
+		public static async Task<clsVMListadoDepartamentos> CreateAsync()
+		{
+			var tmpData = new ObservableCollection<clsDepartamento>();
+			try
+			{
+
+				tmpData = await clsListadoDepartamentosBL.getListadoDepartamentosBL();
+
+			}
+			catch (Exception e)
+			{
+				throw e;
+			}
+			return new clsVMListadoDepartamentos(tmpData);
+		}
+
 
 
 
@@ -92,7 +119,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			var result = await Shell.Current.DisplayAlert("Gestor Empresa", "¿Está seguro de qesea eliminar el registro?", "Si", "No");
 			if (result.Equals(true))
 			{
-				gestionBL.deleteDepartamentoBL(DepartamentoSeleccionado.Id);
+				await clsGestionDepartamentosBL.deleteDepartamentoBL(DepartamentoSeleccionado.id);
 				await GetDepartamentosAsync();
 				await Shell.Current.DisplayAlert("Gestor Empresa", "Se eliminó el registro", "OK");
 			}
@@ -126,7 +153,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			}
 			else
 			{
-				var listaAux = ListadoDepartamentos.ToList().FindAll(x => x.Nombre.ToLower().Contains(Busqueda.ToLower()));
+				var listaAux = ListadoDepartamentos.ToList().FindAll(x => x.nombre.ToLower().Contains(Busqueda.ToLower()));
 				ListadoDepartamentosMostrado = new ObservableCollection<clsDepartamento>(listaAux);
 
 			}
@@ -139,7 +166,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		/// objeto clsPersona y lo envía a la Pagina DetallesPage
 		/// 
 		/// Precondiciones: Si DepartamentoSeleccionado es null, se enviará un objeto clsDepartamento vacío
-		///					En caso de ser distinto de null se enviará un objeto clsPersona con id = PersonaSeleccionada.Id
+		///					En caso de ser distinto de null se enviará un objeto clsPersona con id = PersonaSeleccionada.id
 		/// Postcondiciones: Ninguna.
 		/// </summary>
 		/// <returns></returns>
@@ -151,7 +178,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 			var id = 0;
 			if (DepartamentoSeleccionado is not null)
 			{
-				id = DepartamentoSeleccionado.Id;
+				id = DepartamentoSeleccionado.id;
 				clsGestionDepartamentosBL gestionBL = new();
 
 
@@ -196,7 +223,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 				IsBusy = true;
 
 
-				ListadoDepartamentosMostrado = bl.getListadoDepartamentosBL();
+				ListadoDepartamentosMostrado = await clsListadoDepartamentosBL.getListadoDepartamentosBL();
 				if (ListadoDepartamentos.Count > 0)
 					ListadoDepartamentos.Clear();
 
@@ -206,7 +233,7 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 
 				//Ordeno la lista por idDepartamento
 				var first = ListadoDepartamentos.OrderBy(m =>
-				m.Id).FirstOrDefault();
+				m.id).FirstOrDefault();
 
 				//Compruebo que el preimero no sea null
 				if (first == null)

@@ -18,9 +18,9 @@ namespace CRUD_CommunityToolkitUI.Models
 		public clsPersonaConDepartamento(int id, string _nombre, string _apellidos, string urlFoto, string nombreDepartamento)
 		{
 			this.IdPersona = id;
-			base.Nombre = _nombre;
-			base.Apellidos = _apellidos;
-			base.Foto = urlFoto;
+			base.nombre = _nombre;
+			base.apellidos = _apellidos;
+			base.foto = urlFoto;
 			NombreDepartamento = nombreDepartamento;
 
 		}

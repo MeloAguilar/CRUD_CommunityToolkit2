@@ -8,10 +8,6 @@
              xmlns:entities="clr-namespace:Entities;assembly=Entities"
              Title="{Binding Title}"
              x:Name="DepartamentosPage">
-
-    <ContentPage.BindingContext>
-        <vm:clsVMListadoDepartamentos/>
-    </ContentPage.BindingContext>
     <Grid
        ColumnDefinitions="*,*"
         ColumnSpacing="5"
@@ -82,7 +78,7 @@
                                         Spacing="30"
                                         VerticalOptions="Center">
                                                 <Label
-                                            Text="{Binding Nombre}"
+                                            Text="{Binding nombre}"
                                             FontAttributes="Bold"
                                             FontSize="20"
                                         />

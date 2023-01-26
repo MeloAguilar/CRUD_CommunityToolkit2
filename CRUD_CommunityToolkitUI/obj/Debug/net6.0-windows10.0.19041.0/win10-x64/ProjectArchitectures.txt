@@ -1,1 +1,1 @@
-A:\DAM\DEINT\CRUD_PERSONAS_EMPLEADOS\CRUD_CommunityToolkit\CRUD_CommunityToolkitUI\CRUD_CommunityToolkitUI.csproj;x64
+C:\CRUD_CommunityToolkit2\CRUD_CommunityToolkitUI\CRUD_CommunityToolkitUI.csproj;x64

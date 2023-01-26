@@ -5,9 +5,7 @@
              xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
              x:DataType="vm:clsVMEditarInsertarDepartamento"
              Title="Detalles Departamento">
-    <ContentPage.BindingContext>
-        <vm:clsVMEditarInsertarDepartamento/>
-    </ContentPage.BindingContext>
+
     <VerticalStackLayout>
 
         <Border 
@@ -35,7 +33,7 @@
 
                     <Entry
                         Placeholder="Escribe aqui..."
-                            Text="{Binding DepartamentoSeleccionado.Nombre}"
+                            Text="{Binding DepartamentoSeleccionado.nombre}"
                             FontAttributes="Bold"
                             FontSize="25"
                             Grid.ColumnSpan="3"

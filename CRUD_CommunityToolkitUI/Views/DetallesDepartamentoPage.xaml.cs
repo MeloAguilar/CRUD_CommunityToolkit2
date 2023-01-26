@@ -6,4 +6,11 @@ public partial class DetallesDepartamentoPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	protected override async void OnAppearing()
+	{
+		clsVMEditarInsertarDepartamento vm = await clsVMEditarInsertarDepartamento.CreateAsync();
+		BindingContext = vm;
+		base.OnAppearing();
+	}
 }

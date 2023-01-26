@@ -1,9 +1,12 @@
 ﻿using DAL.Conexion;
 using Entities;
 using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +27,6 @@ namespace DAL.Gestion
 			miConexion = new clsMiConexion(server, name, user, pass);
 		}
 
-
 		/// <summary>
 		/// <Header> inserPersona(clsPersona departamento) : bool </Header>
 		/// Método que se encarga de insertar un registro en la tabla 
@@ -40,41 +42,60 @@ namespace DAL.Gestion
 		///			-false: no se pudo insertar el registro en la base de datos.
 		///			-true: los datos se insertaron satisfactoriamente.
 		/// </returns>
-		public bool insertarDepartamento(clsDepartamento departamento)
+		public static async Task<HttpResponseMessage> insertarDepartamento(clsDepartamento departamento)
 		{
-			bool exito;
-			SqlConnection cnn = null;
+
+			HttpClient mihttpClient = new HttpClient();
+
+			string datos;
+
+			HttpContent contenido;
+
+			string miCadenaUrl = clsUriBase.getUriBase();
+
+			Uri miUri = new Uri($"{miCadenaUrl}departamentos");
+
+
+
+			datos = JsonConvert.SerializeObject(departamento);
+
+			contenido = new StringContent(datos, System.Text.Encoding.UTF8, "application/json");
+
+
+			//Usaremos el Status de la respuesta para comprobar si ha borrado
+
+			HttpResponseMessage miRespuesta = new HttpResponseMessage();
+
 			try
-			{
-				cnn = miConexion.getConnection();
-				SqlCommand comando = new SqlCommand();
-				comando.Connection = cnn;
-				comando.CommandText = "Insert into Departamentos values(@nombre)";
-				comando.Parameters.AddWithValue("@nombre", departamento.Nombre);
 
-				comando.ExecuteNonQuery();
-				exito = true;
+			{
+
+				datos = JsonConvert.SerializeObject(departamento);
+
+				contenido = new StringContent(datos, System.Text.Encoding.UTF8, "application/json");
+
+				miRespuesta = await mihttpClient.PostAsync(miUri, contenido);
 
 			}
-			catch (Exception e)
+
+			catch (Exception ex)
+
 			{
-				exito = false;
+
+				throw ex;
+
 			}
-			finally
-			{
-				if (cnn != null)
-				{
-					miConexion.closeConnection(ref cnn);
-				}
-			}
-			return exito;
+
+			return miRespuesta;
+
 		}
 
 
 
 
+
 		/// <summary>
-		/// <Header> deletePersona(int id) : bool </Header>
+		/// <Header> deleteDepartamento(int id) : bool </Header>
 		/// Método que se encarga de eliminar un registro en la tabla 
 		/// Personas de la base de datos dado un entero que corresponda
 		/// a la propiedad id de un registro de la base de datos
@@ -85,171 +106,236 @@ namespace DAL.Gestion
 		/// </pre>
 		/// </summary>
 		/// <param name="id">
-		///		entero correspondiente al atributo Id de un objeto clsPersona	
+		///		entero correspondiente al atributo id de un objeto clsDepartamento	
 		/// </param>
 		/// <returns>
 		///		exito 
 		///			-false: no se pudo eliminar el registro en la base de datos.
 		///			-true: el registro se eliminó satisfactoriamente.
 		/// </returns>
-		public bool deleteDepartamento(int id)
+		public static async Task<HttpResponseMessage> deleteDepartamento(int id)
 		{
-			bool exito;
-			SqlConnection cnn = null;
+			string miCadenaUrl = clsUriBase.getUriBase();
+
+			Uri miUri = new Uri($"{miCadenaUrl}departamentos/{id}");
+
+
+
+			HttpClient mihttpClient;
+
+			HttpResponseMessage miCodigoRespuesta;
+
+			//Instanciamos el cliente Http
+
+			mihttpClient = new HttpClient();
 			try
 			{
-				cnn =  miConexion.getConnection();
-				SqlCommand comando = new SqlCommand();
-				comando.Connection = cnn;
-				comando.CommandText = "Delete From Departamentos where id = @id";
-				comando.Parameters.AddWithValue("@id", id);
-				comando.ExecuteNonQuery();
+				miCodigoRespuesta = await mihttpClient.DeleteAsync(miUri);
 
-				exito = true;
-			}
-			catch (Exception)
-			{
-				exito = false;
-			}
-			finally
-			{
-				if (cnn != null)
-				{
-					miConexion.closeConnection(ref cnn);
-				}
-			}
+				mihttpClient.Dispose();
 
-			return exito;
+			}
+			catch (Exception e)
+			{
+				throw e;
+			}
+			return miCodigoRespuesta;
 
 		}
 
 
 
-		/// <summary>
-		/// <Header> editPersona(int id) : bool </Header>
-		/// Método que se encarga de editar un registro de la tabla 
-		/// Personas de la base de datos dado un entero que corresponda
-		/// a la propiedad id de un registro de la base de datos
-		/// y un objeto clsPersona con los cambios que se deseen realizar
-		/// como parámetro y un entero correspondiente al id del registro que se desea atacar.
-		/// 
-		/// <pre>
-		///		id debe ser un entero correspondiente al id de un registro de la tabla Personas de la base de datos.
-		/// </pre>
-		/// </summary>
-		/// <param name="id">
-		///		entero correspondiente al atributo Id de un objeto clsPersona	
-		/// </param>
-		/// <param name="departamento">
-		///		objeto clsPersona con los cambios que se desea reaalizar en el registro
-		/// </param>
-		/// <returns>
-		///		exito 
-		///			-false: no se pudo editar el registro en la base de datos.
-		///			-true: el registro se editó satisfactoriamente.
-		/// </returns>
-		/// 
-		public bool editDepartamento(clsDepartamento departamento, int id)
-		{
-			bool exito;
-			SqlConnection cnn = null;
-			try
-			{
-
-
-				cnn =  miConexion.getConnection();
-				SqlCommand comando = new SqlCommand();
-				comando.Connection = cnn;
-				comando.CommandText = "Update Departamentos set nombre = @nombre Where id = @id";
-				comando.Parameters.AddWithValue("@id", id);
-				comando.Parameters.AddWithValue("@nombre", departamento.Nombre);
-				comando.ExecuteNonQuery();
-
-				exito = true;
-			}
-			catch (Exception)
-			{
-				exito = false;
-			}
-			finally
-			
-			{
-				if (cnn != null)
-				{
-					miConexion.closeConnection(ref cnn);
-				}
-			}
-
-			return exito;
-
-		}
-
 
 
 		/// <summary>
-		/// <Header> editPersona(int id) : bool </Header>
-		/// Método que se encarga de editar un registro de la tabla 
-		/// Personas de la base de datos dado un entero que corresponda
-		/// a la propiedad id de un registro de la base de datos
-		/// y un objeto clsPersona con los cambios que se deseen realizar
-		/// como parámetro y un entero correspondiente al id del registro que se desea atacar.
-		/// 
-		/// <pre>
-		///		id debe ser un entero correspondiente al id de un registro de la tabla Personas de la base de datos.
-		/// </pre>
+		/// Método que se encarga de recoger un objeto clsDepartamento 
+		/// dado un entero que concuerde con un registro de la Api atacada.
 		/// </summary>
-		/// <param name="id">
-		///		entero correspondiente al atributo Id de un objeto clsPersona	
-		/// </param>
-		/// <param name="persona">
-		///		objeto clsPersona con los cambios que se desea reaalizar en el registro
-		/// </param>
-		/// <returns>
-		///		exito 
-		///			-false: no se pudo editar el registro en la base de datos.
-		///			-true: el registro se editó satisfactoriamente.
-		/// </returns>
-		/// 
-		public clsDepartamento getDepartamentoById(int id)
+		/// <param name="id"></param>
+		public async Task<clsDepartamento> GetDepartamento(int id)
 		{
-			clsDepartamento departamento = new();
-			SqlConnection cnn = null;
+			//Pido la cadena de la Uri al método estático
+
+			string miCadenaUrl = clsUriBase.getUriBase();
+
+			Uri miUri = new Uri($"{miCadenaUrl}Departamentos/{id}");
+
+			clsDepartamento departamento = new clsDepartamento();
+
+			HttpClient mihttpClient;
+
+			HttpResponseMessage miCodigoRespuesta;
+
+			string textoJsonRespuesta;
+
+			//Instanciamos el cliente Http
+
+			mihttpClient = new HttpClient();
+
+
 			try
+
 			{
 
+				miCodigoRespuesta = await mihttpClient.GetAsync(miUri);
 
-				cnn =  miConexion.getConnection();
-				SqlCommand comando = new SqlCommand();
-				SqlDataReader lector;
-				comando.Connection = cnn;
-				comando.CommandText = "Select * From Departamentos where id = @id";
-				comando.Parameters.AddWithValue("@id", id);
+				if (miCodigoRespuesta.IsSuccessStatusCode)
 
-				lector = comando.ExecuteReader();
-				if (lector.HasRows)
 				{
-					while (lector.Read())
-					{
-						departamento = new(
-							lector.GetInt32(0),
-							lector.GetString(1)
-							);
-					}
+
+					textoJsonRespuesta = await mihttpClient.GetStringAsync(miUri);
+
+					mihttpClient.Dispose();
+
+					//JsonConvert necesita using Newtonsoft.Json;
+
+					//Es el paquete Nuget de Newtonsoft
+
+					departamento =
+					JsonConvert.DeserializeObject<clsDepartamento>(textoJsonRespuesta);
+
 				}
 
+			}
 
-			}
-			catch (Exception)
+			catch (Exception ex)
+
 			{
-				throw;
-			}
-			finally
-			{
-				if (cnn != null)
-					miConexion.closeConnection(ref cnn);
+
+				throw ex;
+
 			}
 			return departamento;
 		}
+
+/// <summary>
+/// <Header> editPersona(int id) : bool </Header>
+/// Método que se encarga de editar un registro de la tabla 
+/// Personas de la base de datos dado un entero que corresponda
+/// a la propiedad id de un registro de la base de datos
+/// y un objeto clsPersona con los cambios que se deseen realizar
+/// como parámetro y un entero correspondiente al id del registro que se desea atacar.
+/// 
+/// <pre>
+///		id debe ser un entero correspondiente al id de un registro de la tabla Personas de la base de datos.
+/// </pre>
+/// </summary>
+/// <param name="id">
+///		entero correspondiente al atributo id de un objeto clsPersona	
+/// </param>
+/// <param name="departamento">
+///		objeto clsPersona con los cambios que se desea reaalizar en el registro
+/// </param>
+/// <returns>
+///		exito 
+///			-false: no se pudo editar el registro en la base de datos.
+///			-true: el registro se editó satisfactoriamente.
+/// </returns>
+/// 
+public bool EditDepartamento(clsDepartamento departamento, int id)
+{
+
+
+
+	bool exito;
+	SqlConnection cnn = null;
+	try
+	{
+
+
+		cnn =  miConexion.getConnection();
+		SqlCommand comando = new SqlCommand();
+		comando.Connection = cnn;
+		comando.CommandText = "Update Departamentos set nombre = @nombre Where id = @id";
+		comando.Parameters.AddWithValue("@id", id);
+		comando.Parameters.AddWithValue("@nombre", departamento.nombre);
+		comando.ExecuteNonQuery();
+
+		exito = true;
+	}
+	catch (Exception)
+	{
+		exito = false;
+	}
+	finally
+
+	{
+		if (cnn != null)
+		{
+			miConexion.closeConnection(ref cnn);
+		}
+	}
+
+	return exito;
+
+}
+
+
+
+/// <summary>
+/// <Header> editPersona(int id) : bool </Header>
+/// Método que se encarga de editar un registro de la tabla 
+/// Personas de la base de datos dado un entero que corresponda
+/// a la propiedad id de un registro de la base de datos
+/// y un objeto clsPersona con los cambios que se deseen realizar
+/// como parámetro y un entero correspondiente al id del registro que se desea atacar.
+/// 
+/// <pre>
+///		id debe ser un entero correspondiente al id de un registro de la tabla Personas de la base de datos.
+/// </pre>
+/// </summary>
+/// <param name="id">
+///		entero correspondiente al atributo id de un objeto clsPersona	
+/// </param>
+/// <param name="persona">
+///		objeto clsPersona con los cambios que se desea reaalizar en el registro
+/// </param>
+/// <returns>
+///		exito 
+///			-false: no se pudo editar el registro en la base de datos.
+///			-true: el registro se editó satisfactoriamente.
+/// </returns>
+/// 
+public clsDepartamento getDepartamentoById(int id)
+{
+	clsDepartamento departamento = new();
+	SqlConnection cnn = null;
+	try
+	{
+
+
+		cnn =  miConexion.getConnection();
+		SqlCommand comando = new SqlCommand();
+		SqlDataReader lector;
+		comando.Connection = cnn;
+		comando.CommandText = "Select * From Departamentos where id = @id";
+		comando.Parameters.AddWithValue("@id", id);
+
+		lector = comando.ExecuteReader();
+		if (lector.HasRows)
+		{
+			while (lector.Read())
+			{
+				departamento = new(
+					lector.GetInt32(0),
+					lector.GetString(1)
+					);
+			}
+		}
+
+
+	}
+	catch (Exception)
+	{
+		throw;
+	}
+	finally
+	{
+		if (cnn != null)
+			miConexion.closeConnection(ref cnn);
+	}
+	return departamento;
+}
 
 
 	}

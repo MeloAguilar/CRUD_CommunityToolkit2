@@ -13,61 +13,45 @@ namespace DAL.Listados
 	public class clsListadoDepartamentos
 	{
 
-		private clsMiConexion miConexion;
-
-		public clsListadoDepartamentos()
-		{
-			miConexion = new clsMiConexion();
-		}
-
-		public clsListadoDepartamentos(string server, string name, string pass, string user)
-		{
-			miConexion = new clsMiConexion(server, name, user, pass);
-		}
-
-
 		/// <summary>
 		/// Función que se encarga de recoger un listado de objetos clsDepartamento de la base de datos
 		/// introducida en la instancia del objeto clsMiConexion.
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		public List<clsDepartamento> getListadoCompletoDepartamentos()
+		public static async Task<List<clsDepartamento>> getListadoCompletoDepartamentos()
 		{
-			SqlConnection cnn = null;
+			string miCadenaUrl = clsUriBase.getUriBase();
+
+			Uri miUri = new Uri($"{miCadenaUrl}departamentos");
+
 			List<clsDepartamento> lista = new List<clsDepartamento>();
 
+			HttpClient mihttpClient;
+
+
+			string textoJsonRespuesta;
+
+			//Instanciamos el cliente Http
+
+			
 			try
 			{
-				cnn = miConexion.getConnection();
-				SqlCommand cmd = cnn.CreateCommand();
-				SqlDataReader miLector;
-				cmd.Connection = cnn;
+				mihttpClient = new HttpClient();
 
-				cmd.CommandText = "Select * From departamentos";
-				miLector = cmd.ExecuteReader();
-				while (miLector.Read())
-				{
-					if (miLector.HasRows)
-					{
-						clsDepartamento departamento = new clsDepartamento();
-						departamento.Id = miLector.GetInt32(0);
-						departamento.Nombre = miLector.GetString(1);
-						lista.Add(departamento);
-					}
-				}
-			}catch(Exception e)
+				textoJsonRespuesta = await mihttpClient.GetStringAsync(miUri);
+
+				mihttpClient.Dispose();
+
+				lista = Newtonsoft.Json.JsonConvert.DeserializeObject<List<clsDepartamento>>(textoJsonRespuesta);
+			}
+			catch (Exception e)
 			{
 				throw e;
 			}
-			finally
-			{
-				if (cnn!=null)
-				{
-					miConexion.closeConnection(ref cnn);
-				}
-			}
+
 			return lista;
+
 		}
 	}
 }

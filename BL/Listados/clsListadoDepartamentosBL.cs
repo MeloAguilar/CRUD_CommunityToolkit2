@@ -18,11 +18,10 @@ namespace BL.Listados
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		public ObservableCollection<clsDepartamento> getListadoDepartamentosBL()
+		public static async Task<ObservableCollection<clsDepartamento>> getListadoDepartamentosBL()
 		{
-			dal = new clsListadoDepartamentos();	
-			
-			return new ObservableCollection<clsDepartamento>(dal.getListadoCompletoDepartamentos());
+			return new ObservableCollection<clsDepartamento>(await clsListadoDepartamentos.getListadoCompletoDepartamentos());
 		}
+
 	}
 }

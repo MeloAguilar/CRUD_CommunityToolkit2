@@ -32,6 +32,8 @@ public class MonoPackageManager_Resources {
 		"Microsoft.IdentityModel.Tokens.dll",
 		"Microsoft.Maui.Graphics.dll",
 		"Microsoft.SqlServer.Server.dll",
+		"Newtonsoft.Json.dll",
+		"Newtonsoft.Json.Bson.dll",
 		"System.Configuration.ConfigurationManager.dll",
 		"System.Drawing.Common.dll",
 		"System.IdentityModel.Tokens.Jwt.dll",

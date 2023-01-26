@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5j6xZBcs3Ambxv09i1O/kxevhwLgH1rTK5DaV+4+IhOiSdUH9hybpWp+0Ms4UEa9Vv2EXQHraaAkMnzody7DBQ==",
+  "dgSpecHash": "LQM+OzjBa5npswODgbPAnG8xoFVQfSszGwACuBwH/vm/rU5w0TRDqWoGiLKnxikks81JAKHNdse09iucHsSgSA==",
   "success": true,
-  "projectFilePath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\CRUD_CommunityToolkit2\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carra\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\carra\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -23,6 +23,8 @@
     "C:\\Users\\carra\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\carra\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\carra\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\carra\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\carra\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\carra\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\carra\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
     "C:\\Users\\carra\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",

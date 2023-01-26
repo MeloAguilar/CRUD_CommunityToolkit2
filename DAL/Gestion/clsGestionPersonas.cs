@@ -1,9 +1,11 @@
 ﻿using DAL.Conexion;
 using Entities;
 using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ namespace DAL.Gestion
 {
 	public class clsGestionPersonas
 	{
+
+
 		private clsMiConexion miConexion;
 
 		public clsGestionPersonas()
@@ -23,7 +27,6 @@ namespace DAL.Gestion
 		{
 			miConexion = new clsMiConexion(server, name, user, pass);
 		}
-
 
 		/// <summary>
 		/// <Header> inserPersona(clsPersona persona) : bool </Header>
@@ -40,42 +43,55 @@ namespace DAL.Gestion
 		///			-false: no se pudo insertar el registro en la base de datos.
 		///			-true: los datos se insertaron satisfactoriamente.
 		/// </returns>
-		public bool insertarPersona(clsPersona persona)
+		public static async Task<HttpStatusCode> insertarPersona(clsPersona persona)
 		{
-			bool exito;
-			SqlConnection cnn = null;
+
+			HttpClient mihttpClient = new HttpClient();
+
+			string datos;
+
+			HttpContent contenido;
+
+			string miCadenaUrl = clsUriBase.getUriBase();
+
+			Uri miUri = new Uri($"{miCadenaUrl}Personas");
+
+
+
+			datos = JsonConvert.SerializeObject(persona);
+
+			contenido = new StringContent(datos, System.Text.Encoding.UTF8, "application/json");
+
+
+			//Usaremos el Status de la respuesta para comprobar si ha borrado
+
+			HttpResponseMessage miRespuesta = new HttpResponseMessage();
+
 			try
-			{
-				cnn = miConexion.getConnection();
-				SqlCommand comando = new SqlCommand();
-				comando.Connection = cnn;
-				comando.CommandText = "Insert into personas values(@nombre, @apellidos, @telefono, @direccion, @foto, @fechaNac, @idDepartamento)";
-				comando.Parameters.AddWithValue("@nombre", persona.Nombre);
-				comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
-				comando.Parameters.AddWithValue("@telefono", persona.Telefono);
-				comando.Parameters.AddWithValue("@direccion", persona.Direccion);
-				comando.Parameters.AddWithValue("@foto", persona.Foto);
-				comando.Parameters.AddWithValue("@fechaNac", persona.FechaNacimiento);
-				comando.Parameters.AddWithValue("@idDepartamento", persona.IdDepartamento);
 
-				comando.ExecuteNonQuery();
-				exito = true;
+			{
+
+				datos = JsonConvert.SerializeObject(persona);
+
+				contenido = new StringContent(datos, System.Text.Encoding.UTF8, "application/json");
+
+				miRespuesta = await mihttpClient.PostAsync(miUri, contenido);
 
 			}
-			catch (Exception e)
+
+			catch (Exception ex)
+
 			{
-				throw e;
-				exito = false;
+
+				throw ex;
+
 			}
-			finally
-			{
-				if (cnn != null)
-				{
-					miConexion.closeConnection(ref cnn);
-				}
-			}
-			return exito;
+
+			return miRespuesta.StatusCode;
+
 		}
+
+
 
 
 
@@ -92,42 +108,40 @@ namespace DAL.Gestion
 		/// </pre>
 		/// </summary>
 		/// <param name="id">
-		///		entero correspondiente al atributo Id de un objeto clsPersona	
+		///		entero correspondiente al atributo id de un objeto clsPersona	
 		/// </param>
 		/// <returns>
 		///		exito 
 		///			-false: no se pudo eliminar el registro en la base de datos.
 		///			-true: el registro se eliminó satisfactoriamente.
 		/// </returns>
-		public bool deletePersona(int id)
+		public static async Task<HttpResponseMessage> deletePersona(int id)
 		{
-			bool exito;
-			SqlConnection cnn = null;
+			string miCadenaUrl = clsUriBase.getUriBase();
+
+			Uri miUri = new Uri($"{miCadenaUrl}personas/{id}");
+
+
+
+			HttpClient mihttpClient;
+
+			HttpResponseMessage miCodigoRespuesta;
+
+			//Instanciamos el cliente Http
+
+			mihttpClient = new HttpClient();
 			try
 			{
-				cnn =  miConexion.getConnection();
-				SqlCommand comando = new SqlCommand();
-				comando.Connection = cnn;
-				comando.CommandText = "Delete From Personas where id = @id";
-				comando.Parameters.AddWithValue("@id", id);
-				comando.ExecuteNonQuery();
+				miCodigoRespuesta = await mihttpClient.DeleteAsync(miUri);
 
-				exito = true;
+				mihttpClient.Dispose();
+
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				exito = false;
+				throw e;
 			}
-			finally
-			{
-				if (cnn != null)
-				{
-					miConexion.closeConnection(ref cnn);
-				}
-			}
-
-			return exito;
-
+			return miCodigoRespuesta;
 		}
 
 
@@ -145,7 +159,7 @@ namespace DAL.Gestion
 		/// </pre>
 		/// </summary>
 		/// <param name="id">
-		///		entero correspondiente al atributo Id de un objeto clsPersona	
+		///		entero correspondiente al atributo id de un objeto clsPersona	
 		/// </param>
 		/// <param name="persona">
 		///		objeto clsPersona con los cambios que se desea reaalizar en el registro
@@ -169,13 +183,13 @@ namespace DAL.Gestion
 				comando.Connection = cnn;
 				comando.CommandText = "Update Personas set nombre = @nombre, apellidos = @apellidos, direccion = @direccion, telefono = @telefono, fechaNacimiento = @fechaNacimiento, foto = @foto, idDepartamento = @idDepartamento Where id = @id";
 				comando.Parameters.AddWithValue("@id", id);
-				comando.Parameters.AddWithValue("@nombre", persona.Nombre);
-				comando.Parameters.AddWithValue("@apellidos", persona.Apellidos);
-				comando.Parameters.AddWithValue("@telefono", persona.Telefono);
-				comando.Parameters.AddWithValue("@idDepartamento", persona.IdDepartamento);
-				comando.Parameters.AddWithValue("@direccion", persona.Direccion);
-				comando.Parameters.AddWithValue("@fechaNacimiento", persona.FechaNacimiento);
-				comando.Parameters.AddWithValue("@foto", persona.Foto);
+				comando.Parameters.AddWithValue("@nombre", persona.nombre);
+				comando.Parameters.AddWithValue("@apellidos", persona.apellidos);
+				comando.Parameters.AddWithValue("@telefono", persona.telefono);
+				comando.Parameters.AddWithValue("@idDepartamento", persona.idDepartamento);
+				comando.Parameters.AddWithValue("@direccion", persona.direccion);
+				comando.Parameters.AddWithValue("@fechaNacimiento", persona.fechaNacimiento);
+				comando.Parameters.AddWithValue("@foto", persona.foto);
 				comando.ExecuteNonQuery();
 
 				exito = true;
@@ -211,7 +225,7 @@ namespace DAL.Gestion
 		/// </pre>
 		/// </summary>
 		/// <param name="id">
-		///		entero correspondiente al atributo Id de un objeto clsPersona	
+		///		entero correspondiente al atributo id de un objeto clsPersona	
 		/// </param>
 		/// <param name="persona">
 		///		objeto clsPersona con los cambios que se desea reaalizar en el registro
@@ -236,14 +250,14 @@ namespace DAL.Gestion
 				comando.Connection = cnn;
 				comando.CommandText = "Select * From Personas where id = @id";
 				comando.Parameters.AddWithValue("@id", id);
-			
+
 				lector = comando.ExecuteReader();
 				if (lector.HasRows)
 				{
 					while (lector.Read())
 					{
 						persona = new(
-							lector.GetInt32(0), 
+							lector.GetInt32(0),
 							lector.GetString(1),
 							lector.GetString(2),
 							lector.GetString(3),
@@ -271,4 +285,5 @@ namespace DAL.Gestion
 
 
 	}
+
 }

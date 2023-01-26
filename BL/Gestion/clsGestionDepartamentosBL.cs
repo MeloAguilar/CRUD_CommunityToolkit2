@@ -20,15 +20,15 @@ namespace BL.Gestion
 		/// <summary>
 		/// 
 		/// Método que se encarga de añadir la lógica de negocio al método 
-		/// de la capa de acceso a datos "insertarPersona"
+		/// de la capa de acceso a datos "insertarDepartamento"
 		/// Precondiciones: Ninguna
 		/// Postcondiciones: Ninguna
 		/// </summary>
-		/// <param name="persona"></param>
+		/// <param name="departamento"></param>
 		/// <returns></returns>
-		public bool insertarDepartamentoBL(clsDepartamento persona)
+		public static async Task<HttpResponseMessage> insertarDepartamentoBL(clsDepartamento departamento)
 		{
-			return dal.insertarDepartamento(persona);
+			return await clsGestionDepartamentos.insertarDepartamento(departamento);
 		}
 
 		/// <summary>
@@ -40,9 +40,9 @@ namespace BL.Gestion
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public bool deleteDepartamentoBL(int id)
+		public static async Task<HttpResponseMessage> deleteDepartamentoBL(int id)
 		{
-			return dal.deleteDepartamento(id);
+			return await clsGestionDepartamentos.deleteDepartamento(id);
 		}
 
 		/// <summary>
@@ -55,7 +55,7 @@ namespace BL.Gestion
 		/// <returns></returns>
 		public bool editDepartamentoBL(clsDepartamento departamento, int id)
 		{
-			return dal.editDepartamento(departamento, id);
+			return dal.EditDepartamento(departamento, id);
 		}
 
 

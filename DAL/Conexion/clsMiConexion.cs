@@ -47,6 +47,11 @@ namespace DAL.Conexion
 
         }
 
+		//this.server = $"107-04\\SQLEXPRESS";
+		//this.dataBase = "Examen";
+		//this.user = "prueba";
+		//this.pass = "123";
+
 		//Con parámetros por si quisiera cambiar las conexiones
 		public clsMiConexion(String server, String database, String user, String pass)
         {

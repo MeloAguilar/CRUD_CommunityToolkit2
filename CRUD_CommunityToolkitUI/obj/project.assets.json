@@ -46,7 +46,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -431,7 +431,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -448,7 +448,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -513,6 +513,35 @@
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -2603,7 +2632,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -2617,7 +2647,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -2629,6 +2660,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -2682,7 +2716,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -3039,7 +3073,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -3056,7 +3090,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -3115,6 +3149,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -5141,7 +5204,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -5155,7 +5219,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -5167,6 +5232,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -5220,7 +5288,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -5577,7 +5645,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -5594,7 +5662,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -5653,6 +5721,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -7679,7 +7776,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -7693,7 +7791,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -7705,6 +7804,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -7758,7 +7860,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -8115,7 +8217,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -8132,7 +8234,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -8191,6 +8293,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -10217,7 +10348,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -10231,7 +10363,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -10243,6 +10376,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -10296,7 +10432,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -10653,7 +10789,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -10670,7 +10806,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -10729,6 +10865,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -12755,7 +12920,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -12769,7 +12935,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -12781,6 +12948,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -12834,7 +13004,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -13191,7 +13361,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -13208,7 +13378,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -13267,6 +13437,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -15293,7 +15492,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -15307,7 +15507,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -15319,6 +15520,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -15372,7 +15576,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -15729,7 +15933,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -15746,7 +15950,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -15805,6 +16009,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -17831,7 +18064,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -17845,7 +18079,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -17857,6 +18092,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -17910,7 +18148,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -18270,7 +18508,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
@@ -18287,7 +18525,7 @@
           "Xamarin.Google.Crypto.Tink.Android": "1.6.1.6"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -18346,6 +18584,35 @@
         "runtime": {
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -20380,7 +20647,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -20394,7 +20662,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -20406,6 +20675,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -20414,7 +20686,7 @@
         }
       }
     },
-    "net6.0-ios16.0": {
+    "net6.0-ios16.1": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -20459,7 +20731,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -20829,14 +21101,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -20932,6 +21204,35 @@
           "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -21474,7 +21775,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -21488,7 +21790,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -21500,6 +21803,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -21508,7 +21814,7 @@
         }
       }
     },
-    "net6.0-ios16.0/android-arm": {
+    "net6.0-ios16.1/android-arm": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -21553,7 +21859,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -21895,14 +22201,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -21986,6 +22292,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -22617,7 +22952,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -22631,7 +22967,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -22643,6 +22980,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -22651,7 +22991,7 @@
         }
       }
     },
-    "net6.0-ios16.0/android-arm64": {
+    "net6.0-ios16.1/android-arm64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -22696,7 +23036,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -23038,14 +23378,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -23129,6 +23469,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -23760,7 +24129,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -23774,7 +24144,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -23786,6 +24157,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -23794,7 +24168,7 @@
         }
       }
     },
-    "net6.0-ios16.0/android-x64": {
+    "net6.0-ios16.1/android-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -23839,7 +24213,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -24181,14 +24555,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -24272,6 +24646,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -24903,7 +25306,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -24917,7 +25321,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -24929,6 +25334,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -24937,7 +25345,7 @@
         }
       }
     },
-    "net6.0-ios16.0/android-x86": {
+    "net6.0-ios16.1/android-x86": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -24982,7 +25390,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -25324,14 +25732,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -25415,6 +25823,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -26046,7 +26483,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -26060,7 +26498,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -26072,6 +26511,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -26080,7 +26522,7 @@
         }
       }
     },
-    "net6.0-ios16.0/iossimulator-x64": {
+    "net6.0-ios16.1/iossimulator-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -26125,7 +26567,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -26467,14 +26909,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -26558,6 +27000,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -27189,7 +27660,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -27203,7 +27675,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -27215,6 +27688,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -27223,7 +27699,7 @@
         }
       }
     },
-    "net6.0-ios16.0/maccatalyst-x64": {
+    "net6.0-ios16.1/maccatalyst-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -27268,7 +27744,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -27610,14 +28086,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -27701,6 +28177,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -28332,7 +28837,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -28346,7 +28852,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -28358,6 +28865,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -28366,7 +28876,7 @@
         }
       }
     },
-    "net6.0-ios16.0/win10-x64": {
+    "net6.0-ios16.1/win10-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -28411,7 +28921,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -28756,14 +29266,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -28847,6 +29357,35 @@
         "runtime": {
           "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -29459,7 +29998,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -29473,7 +30013,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -29485,6 +30026,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -29493,7 +30037,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4": {
+    "net6.0-maccatalyst16.1": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -29538,7 +30082,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -29908,14 +30452,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -30011,6 +30555,35 @@
           "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -30553,7 +31126,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -30567,7 +31141,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -30579,6 +31154,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -30587,7 +31165,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/android-arm": {
+    "net6.0-maccatalyst16.1/android-arm": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -30632,7 +31210,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -30974,14 +31552,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -31065,6 +31643,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -31696,7 +32303,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -31710,7 +32318,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -31722,6 +32331,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -31730,7 +32342,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/android-arm64": {
+    "net6.0-maccatalyst16.1/android-arm64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -31775,7 +32387,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -32117,14 +32729,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -32208,6 +32820,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -32839,7 +33480,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -32853,7 +33495,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -32865,6 +33508,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -32873,7 +33519,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/android-x64": {
+    "net6.0-maccatalyst16.1/android-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -32918,7 +33564,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -33260,14 +33906,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -33351,6 +33997,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -33982,7 +34657,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -33996,7 +34672,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -34008,6 +34685,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -34016,7 +34696,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/android-x86": {
+    "net6.0-maccatalyst16.1/android-x86": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -34061,7 +34741,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -34403,14 +35083,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -34494,6 +35174,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -35125,7 +35834,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -35139,7 +35849,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -35151,6 +35862,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -35159,7 +35873,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/iossimulator-x64": {
+    "net6.0-maccatalyst16.1/iossimulator-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -35204,7 +35918,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -35546,14 +36260,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -35637,6 +36351,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -36268,7 +37011,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -36282,7 +37026,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -36294,6 +37039,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -36302,7 +37050,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/maccatalyst-x64": {
+    "net6.0-maccatalyst16.1/maccatalyst-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -36347,7 +37095,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -36689,14 +37437,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -36780,6 +37528,35 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -37411,7 +38188,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -37425,7 +38203,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -37437,6 +38216,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -37445,7 +38227,7 @@
         }
       }
     },
-    "net6.0-maccatalyst15.4/win10-x64": {
+    "net6.0-maccatalyst16.1/win10-x64": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -37490,7 +38272,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -37835,14 +38617,14 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Graphics": "6.0.501",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -37926,6 +38708,35 @@
         "runtime": {
           "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -38538,7 +39349,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -38552,7 +39364,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -38564,6 +39377,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -38617,7 +39433,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -39020,7 +39836,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -39029,7 +39845,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -39269,6 +40085,35 @@
           "runtimes/win10-x86/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
             "assetType": "native",
             "rid": "win10-x86"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -39803,7 +40648,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -39817,7 +40663,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -39829,6 +40676,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -39882,7 +40732,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -40243,7 +41093,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -40252,7 +41102,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -40453,6 +41303,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -41075,7 +41954,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -41089,7 +41969,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -41101,6 +41982,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -41154,7 +42038,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -41515,7 +42399,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -41524,7 +42408,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -41725,6 +42609,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -42347,7 +43260,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -42361,7 +43275,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -42373,6 +43288,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -42426,7 +43344,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -42787,7 +43705,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -42796,7 +43714,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -42997,6 +43915,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -43619,7 +44566,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -43633,7 +44581,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -43645,6 +44594,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -43698,7 +44650,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -44059,7 +45011,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -44068,7 +45020,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -44269,6 +45221,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -44891,7 +45872,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -44905,7 +45887,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -44917,6 +45900,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -44970,7 +45956,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -45331,7 +46317,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -45340,7 +46326,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -45541,6 +46527,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -46163,7 +47178,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -46177,7 +47193,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -46189,6 +47206,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -46242,7 +47262,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -46603,7 +47623,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -46612,7 +47632,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -46813,6 +47833,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -47435,7 +48484,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -47449,7 +48499,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -47461,6 +48512,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -47514,7 +48568,7 @@
           }
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -47881,7 +48935,7 @@
           }
         }
       },
-      "Microsoft.Maui.Dependencies/6.0.541": {
+      "Microsoft.Maui.Dependencies/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.3.1",
@@ -47890,7 +48944,7 @@
           "Microsoft.WindowsAppSDK": "1.1.3"
         }
       },
-      "Microsoft.Maui.Extensions/6.0.541": {
+      "Microsoft.Maui.Extensions/6.0.548": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -48097,6 +49151,35 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -48700,7 +49783,8 @@
         "dependencies": {
           "DAL": "1.0.0",
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
@@ -48714,7 +49798,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.0.1"
+          "Microsoft.Data.SqlClient": "5.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
@@ -48726,6 +49811,9 @@
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
         "compile": {
           "bin/placeholder/Entities.dll": {}
         },
@@ -48774,10 +49862,10 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "CommunityToolkit.Mvvm/8.0.0": {
-      "sha512": "Jiu2g5WUdXRwzhJkHB+B4JBKP5A5+fp8xKiW/ZQo5PI+DruI7MbPEcK9K/Aw0YzTiWRuG6CBluzYIWN5Eo7BkQ==",
+    "CommunityToolkit.Mvvm/8.1.0": {
+      "sha512": "xxOt7lu9a5kB5Fs9RfcxzVlKnhuuPe+w7AXHtmCFtS3oldrsUhEMxHfNulluXSscUUoGxZ0jh55Om12ZP6abHA==",
       "type": "package",
-      "path": "communitytoolkit.mvvm/8.0.0",
+      "path": "communitytoolkit.mvvm/8.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -48785,11 +49873,12 @@
         "License.md",
         "ThirdPartyNotices.txt",
         "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
         "build/netstandard2.0/CommunityToolkit.Mvvm.targets",
         "build/netstandard2.1/CommunityToolkit.Mvvm.targets",
         "buildTransitive/netstandard2.0/CommunityToolkit.Mvvm.targets",
         "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets",
-        "communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+        "communitytoolkit.mvvm.8.1.0.nupkg.sha512",
         "communitytoolkit.mvvm.nuspec",
         "lib/net6.0/CommunityToolkit.Mvvm.dll",
         "lib/net6.0/CommunityToolkit.Mvvm.pdb",
@@ -49402,25 +50491,25 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.Maui.Dependencies/6.0.541": {
-      "sha512": "9QJGkpTcPhZHrDmWfxoSUJjjCRLt0IpLz0NSKUqpWTj4D8UbOqrOKIOCO3duyc5xQ2J4mTgzA7H7zdzWZfrdBg==",
+    "Microsoft.Maui.Dependencies/6.0.548": {
+      "sha512": "vhrH4gkoK0fAj2LIMaqWNSUZIP4iPfp+bNRfjX7wqibZkepdmmuHail4rOcz5p4ThnyWYNJUzsnnRYF+znUIUQ==",
       "type": "package",
-      "path": "microsoft.maui.dependencies/6.0.541",
+      "path": "microsoft.maui.dependencies/6.0.548",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "microsoft.maui.dependencies.6.0.541.nupkg.sha512",
+        "microsoft.maui.dependencies.6.0.548.nupkg.sha512",
         "microsoft.maui.dependencies.nuspec"
       ]
     },
-    "Microsoft.Maui.Extensions/6.0.541": {
-      "sha512": "Hpj5ao4T92gb2nEfpqsSOoJmsyP0i+29gpF+mZEa8QjAiwfvN5C1ZckYJY9k8Ir5nqYIjMvHgkwUh6CuR6Ui/w==",
+    "Microsoft.Maui.Extensions/6.0.548": {
+      "sha512": "m9X2QO4Exp07Y+R/S+svAnv955nYG2eFwbwKdL2WH8wn/YpocYdx6gJ8vm+JGZ/Nm57h8XA3yw4KtjuANjCdLQ==",
       "type": "package",
-      "path": "microsoft.maui.extensions/6.0.541",
+      "path": "microsoft.maui.extensions/6.0.548",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "microsoft.maui.extensions.6.0.541.nupkg.sha512",
+        "microsoft.maui.extensions.6.0.548.nupkg.sha512",
         "microsoft.maui.extensions.nuspec"
       ]
     },
@@ -50387,6 +51476,66 @@
         "tools/net5.0/zh-TW/Microsoft.Build.Msix.resources.dll",
         "tools/x64/GenXbf.dll",
         "tools/x86/GenXbf.dll"
+      ]
+    },
+    "Newtonsoft.Json/12.0.1": {
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.pdb",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.pdb",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.pdb",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.pdb",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.pdb",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "sha512": "QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.pdb",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.2.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
       ]
     },
     "runtime.any.System.Collections/4.3.0": {
@@ -54272,56 +55421,60 @@
   "projectFileDependencyGroups": {
     "net6.0-android31.0": [
       "BL >= 1.0.0",
-      "CommunityToolkit.Mvvm >= 8.0.0",
+      "CommunityToolkit.Mvvm >= 8.1.0",
       "Entities >= 1.0.0",
-      "Microsoft.Maui.Dependencies >= 6.0.541",
-      "Microsoft.Maui.Extensions >= 6.0.541",
+      "Microsoft.Maui.Dependencies >= 6.0.548",
+      "Microsoft.Maui.Extensions >= 6.0.548",
+      "Newtonsoft.Json.Bson >= 1.0.2",
       "System.ObjectModel >= 4.3.0"
     ],
-    "net6.0-ios16.0": [
+    "net6.0-ios16.1": [
       "BL >= 1.0.0",
-      "CommunityToolkit.Mvvm >= 8.0.0",
+      "CommunityToolkit.Mvvm >= 8.1.0",
       "Entities >= 1.0.0",
-      "Microsoft.Maui.Dependencies >= 6.0.541",
-      "Microsoft.Maui.Extensions >= 6.0.541",
+      "Microsoft.Maui.Dependencies >= 6.0.548",
+      "Microsoft.Maui.Extensions >= 6.0.548",
+      "Newtonsoft.Json.Bson >= 1.0.2",
       "System.ObjectModel >= 4.3.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
-    "net6.0-maccatalyst15.4": [
+    "net6.0-maccatalyst16.1": [
       "BL >= 1.0.0",
-      "CommunityToolkit.Mvvm >= 8.0.0",
+      "CommunityToolkit.Mvvm >= 8.1.0",
       "Entities >= 1.0.0",
-      "Microsoft.Maui.Dependencies >= 6.0.541",
-      "Microsoft.Maui.Extensions >= 6.0.541",
+      "Microsoft.Maui.Dependencies >= 6.0.548",
+      "Microsoft.Maui.Extensions >= 6.0.548",
+      "Newtonsoft.Json.Bson >= 1.0.2",
       "System.ObjectModel >= 4.3.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
     "net6.0-windows10.0.19041": [
       "BL >= 1.0.0",
-      "CommunityToolkit.Mvvm >= 8.0.0",
+      "CommunityToolkit.Mvvm >= 8.1.0",
       "Entities >= 1.0.0",
-      "Microsoft.Maui.Dependencies >= 6.0.541",
-      "Microsoft.Maui.Extensions >= 6.0.541",
+      "Microsoft.Maui.Dependencies >= 6.0.548",
+      "Microsoft.Maui.Extensions >= 6.0.548",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
+      "Newtonsoft.Json.Bson >= 1.0.2",
       "System.ObjectModel >= 4.3.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\carra\\.nuget\\packages\\": {},
-    "A:\\Programas\\Visual Studio Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\CRUD_CommunityToolkitUI\\CRUD_CommunityToolkitUI.csproj",
+      "projectUniqueName": "C:\\CRUD_CommunityToolkit2\\CRUD_CommunityToolkitUI\\CRUD_CommunityToolkitUI.csproj",
       "projectName": "CRUD_CommunityToolkitUI",
-      "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\CRUD_CommunityToolkitUI\\CRUD_CommunityToolkitUI.csproj",
+      "projectPath": "C:\\CRUD_CommunityToolkit2\\CRUD_CommunityToolkitUI\\CRUD_CommunityToolkitUI.csproj",
       "packagesPath": "C:\\Users\\carra\\.nuget\\packages\\",
-      "outputPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\CRUD_CommunityToolkitUI\\obj\\",
+      "outputPath": "C:\\CRUD_CommunityToolkit2\\CRUD_CommunityToolkitUI\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
-        "A:\\Programas\\Visual Studio Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\carra\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54343,44 +55496,44 @@
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
           "projectReferences": {
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj"
+            "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj"
             },
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj"
+            "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj"
             }
           }
         },
-        "net6.0-ios16.0": {
+        "net6.0-ios16.1": {
           "targetAlias": "net6.0-ios",
           "projectReferences": {
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj"
+            "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj"
             },
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj"
+            "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj"
             }
           }
         },
-        "net6.0-maccatalyst15.4": {
+        "net6.0-maccatalyst16.1": {
           "targetAlias": "net6.0-maccatalyst",
           "projectReferences": {
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj"
+            "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj"
             },
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj"
+            "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj"
             }
           }
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041.0",
           "projectReferences": {
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\BL\\BL.csproj"
+            "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\BL\\BL.csproj"
             },
-            "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj": {
-              "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj"
+            "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj"
             }
           }
         }
@@ -54397,17 +55550,21 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.1.0, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json.Bson": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "System.ObjectModel": {
             "target": "Package",
@@ -54425,6 +55582,64 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Android.Ref.31",
+            "version": "[32.0.476, 32.0.476]"
+          },
+          {
+            "name": "Microsoft.Android.Runtime.31.android-arm",
+            "version": "[32.0.476, 32.0.476]"
+          },
+          {
+            "name": "Microsoft.Android.Runtime.31.android-arm64",
+            "version": "[32.0.476, 32.0.476]"
+          },
+          {
+            "name": "Microsoft.Android.Runtime.31.android-x64",
+            "version": "[32.0.476, 32.0.476]"
+          },
+          {
+            "name": "Microsoft.Android.Runtime.31.android-x86",
+            "version": "[32.0.476, 32.0.476]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-arm",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-arm64",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Ref.android",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Runtime.android",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Ref.android",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Runtime.android",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Ref.android",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Runtime.android",
+            "version": "[6.0.548, 6.0.548]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.Android": {
             "privateAssets": "all"
@@ -54442,24 +55657,28 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       },
-      "net6.0-ios16.0": {
+      "net6.0-ios16.1": {
         "targetAlias": "net6.0-ios",
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.1.0, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json.Bson": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "System.ObjectModel": {
             "target": "Package",
@@ -54482,6 +55701,40 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.iOS.Ref",
+            "version": "[16.1.228, 16.1.228]"
+          },
+          {
+            "name": "Microsoft.iOS.Runtime.iossimulator-x64",
+            "version": "[16.1.228, 16.1.228]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Ref.ios",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Runtime.ios",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Ref.ios",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Runtime.ios",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Ref.ios",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Runtime.ios",
+            "version": "[6.0.548, 6.0.548]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.iOS": {
             "privateAssets": "all"
@@ -54499,24 +55752,28 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       },
-      "net6.0-maccatalyst15.4": {
+      "net6.0-maccatalyst16.1": {
         "targetAlias": "net6.0-maccatalyst",
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.1.0, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json.Bson": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "System.ObjectModel": {
             "target": "Package",
@@ -54540,6 +55797,40 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.MacCatalyst.Ref",
+            "version": "[16.1.228, 16.1.228]"
+          },
+          {
+            "name": "Microsoft.MacCatalyst.Runtime.maccatalyst-x64",
+            "version": "[16.1.228, 16.1.228]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Ref.maccatalyst",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Runtime.maccatalyst",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Ref.maccatalyst",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Runtime.maccatalyst",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Ref.maccatalyst",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Runtime.maccatalyst",
+            "version": "[6.0.548, 6.0.548]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.MacCatalyst": {
             "privateAssets": "all"
@@ -54557,23 +55848,23 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       },
       "net6.0-windows10.0.19041": {
         "targetAlias": "net6.0-windows10.0.19041.0",
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.1.0, )"
           },
           "Microsoft.Maui.Dependencies": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
           },
           "Microsoft.Maui.Extensions": {
             "target": "Package",
-            "version": "[6.0.541, )",
+            "version": "[6.0.548, )",
             "autoReferenced": true
           },
           "Microsoft.Windows.SDK.BuildTools": {
@@ -54581,6 +55872,10 @@
             "target": "Package",
             "version": "[10.0.22000.194, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json.Bson": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "System.ObjectModel": {
             "target": "Package",
@@ -54601,19 +55896,43 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[6.0.10, 6.0.10]"
+            "version": "[6.0.13, 6.0.13]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Ref.win",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Runtime.win",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Ref.win",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Runtime.win",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Ref.win",
+            "version": "[6.0.548, 6.0.548]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Runtime.win",
+            "version": "[6.0.548, 6.0.548]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[6.0.10, 6.0.10]"
+            "version": "[6.0.13, 6.0.13]"
           },
           {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.19041.27, 10.0.19041.27]"
+            "version": "[10.0.19041.28, 10.0.19041.28]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[6.0.10, 6.0.10]"
+            "version": "[6.0.13, 6.0.13]"
           }
         ],
         "frameworkReferences": {
@@ -54633,7 +55952,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

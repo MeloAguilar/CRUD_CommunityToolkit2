@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "UMT/K9mlEx2ywDwd9oy++y3jyeSgn1UNM4PfeEeG24HlJL0GiPF1gqyw9vl4iL0YTh7p1gAEy1YCdtiEAmmdYQ==",
+  "dgSpecHash": "LVopKZvhdwgI1C3U8bjMrMdR7stWLdxOxMxfI64MpfbmhxziVjXq9Ubzwue00YD/GHKPwHc+elfkG4BrPVRBIg==",
   "success": true,
-  "projectFilePath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\carra\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\carra\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

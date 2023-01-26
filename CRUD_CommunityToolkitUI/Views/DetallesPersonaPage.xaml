@@ -4,12 +4,10 @@
              x:Class="CRUD_CommunityToolkitUI.Views.DetallesPersonaPage"
              xmlns:vm="clr-namespace:CRUD_CommunityToolkitUI.ViewModels"
              x:DataType="vm:clsVMEditarInsertarPersona"
-             Title="{Binding PersonaSeleccionada.NombreCompleto}"
+             Title="{Binding Title}"
              >
 
-    <ContentPage.BindingContext>
-        <vm:clsVMEditarInsertarPersona/>
-    </ContentPage.BindingContext>
+
     <ScrollView>
         <VerticalStackLayout>
 
@@ -36,7 +34,7 @@
                             HorizontalOptions="FillAndExpand"
                             />
                         <Label
-                            Text="{Binding PersonaSeleccionada.NombreCompleto}"
+                            Text="{Binding PersonaSeleccionada.nombreCompleto}"
                             FontAttributes="Bold"
                             FontSize="25"
                             TextColor="AliceBlue"
@@ -60,7 +58,7 @@
                                 WidthRequest="160"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center"
-                                Source="{Binding PersonaSeleccionada.Foto}"/>
+                                Source="{Binding PersonaSeleccionada.foto}"/>
 
                         </Frame>
                         <VerticalStackLayout
@@ -68,7 +66,7 @@
                             <Label Text="Nombre"/>
                             <Entry 
                                 x:Name="entryNombre"
-                                Text="{Binding PersonaSeleccionada.Nombre}"/>
+                                Text="{Binding PersonaSeleccionada.nombre}"/>
 
                         </VerticalStackLayout>
                         <VerticalStackLayout
@@ -78,7 +76,7 @@
                                 Text="Apellidos"/>
                             <Entry 
                                 x:Name="entryApellidos"
-                                Text="{Binding PersonaSeleccionada.Apellidos}"
+                                Text="{Binding PersonaSeleccionada.apellidos}"
                                     Grid.Column="1"
                                     Grid.Row="1"/>
                         </VerticalStackLayout>
@@ -94,10 +92,9 @@
                                 Padding="0"
                                 VerticalOptions="End">
                                 <Picker 
-                                  
                                     ItemsSource="{Binding ListaDepartamentos}" 
-                                    ItemDisplayBinding="{Binding Nombre}"
-                                    SelectedIndex="{Binding PersonaSeleccionada.IdDepartamento}"
+                                    ItemDisplayBinding="{Binding nombre}"
+                                    SelectedIndex="{Binding PersonaSeleccionada.idDepartamento}"
                                     SelectedItem="{Binding DepartamentoSeleccionado, Mode=TwoWay}"
                                     VerticalOptions="End"
                                     VerticalTextAlignment="End"
@@ -116,7 +113,7 @@
                                 <DatePicker
                                     VerticalOptions="Center"
                                     HorizontalOptions="Center"
-                                    Date="{Binding PersonaSeleccionada.FechaNacimiento}"/>
+                                    Date="{Binding PersonaSeleccionada.fechaNacimiento}"/>
                             </Frame>
 
                             <VerticalStackLayout 
@@ -128,7 +125,7 @@
                                     Grid.Row="4"/>
                                 <Entry 
                                     x:Name="entryFoto"  
-                                    Text="{Binding PersonaSeleccionada.Foto}"/>
+                                    Text="{Binding PersonaSeleccionada.foto}"/>
                             </VerticalStackLayout>
                             <HorizontalStackLayout
                                 Spacing="50"
@@ -138,14 +135,14 @@
                                 <VerticalStackLayout
                                 WidthRequest="100">
                                     <Label Text="Teléfono"/>
-                                    <Entry Text="{Binding PersonaSeleccionada.Telefono}"/>
+                                    <Entry Text="{Binding PersonaSeleccionada.telefono}"/>
                                 </VerticalStackLayout>
 
                                 <VerticalStackLayout>
                                     <Label Text="Dirección"  
                                         
                                             MaximumWidthRequest="70"/>
-                                    <Entry Text="{Binding PersonaSeleccionada.Direccion}"
+                                    <Entry Text="{Binding PersonaSeleccionada.direccion}"
                                            
                                             MaximumWidthRequest="170"/>
                                 </VerticalStackLayout>

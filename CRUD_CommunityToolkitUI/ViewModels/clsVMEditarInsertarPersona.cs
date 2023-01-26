@@ -6,6 +6,7 @@ using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,17 +41,34 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		#region Constructors
 
 
-		public clsVMEditarInsertarPersona()
-		{
-			DepartamentoSeleccionado = new clsDepartamento();
 
-			deptBL = new();
-			var depts = deptBL.getListadoDepartamentosBL();
-			foreach (var departamento in depts)
-			{
-				ListaDepartamentos.Add(departamento);
-			}
+		private clsVMEditarInsertarPersona(ObservableCollection<clsDepartamento> Data)
+		{
+			ListaDepartamentos = Data;
 		}
+
+
+		/// <summary>
+		/// Método que instancia el ViewModel y 
+		/// </summary>
+		/// <returns></returns>
+		public static async Task<clsVMEditarInsertarPersona> CreateAsync()
+		{
+			var tmpData= new ObservableCollection<clsDepartamento>();
+			try
+			{
+				
+
+				tmpData = await clsListadoDepartamentosBL.getListadoDepartamentosBL();
+
+			}
+			catch (Exception e)
+			{
+				throw e;
+			}
+			return new clsVMEditarInsertarPersona(tmpData);
+		}
+
 		#endregion
 
 
@@ -66,37 +84,44 @@ namespace CRUD_CommunityToolkitUI.ViewModels
 		[RelayCommand]
 		async void GuardarEmpleado()
 		{
-			PersonaSeleccionada.IdDepartamento = DepartamentoSeleccionado.Id;
+			PersonaSeleccionada.idDepartamento = DepartamentoSeleccionado.id;
 			var result = await Shell.Current.DisplayAlert("Gestor Empleados", "¿Guardar?", "Si", "No");
 			if (result.Equals(true))
 			{
 				clsGestionPersonasBL bl = new clsGestionPersonasBL();
-				if (PersonaSeleccionada.Id > 0)
+				if (PersonaSeleccionada.id > 0)
 				{
 
-					if (bl.editPersonaBL(PersonaSeleccionada, PersonaSeleccionada.Id))
+					if (bl.editPersonaBL(PersonaSeleccionada, PersonaSeleccionada.id))
 					{
-						await Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+						await Shell.Current.DisplayAlert("Gestor Empleados", $"Se modificó el empleado {PersonaSeleccionada.nombreCompleto}", "OK");
 						
 					}
 					else
 					{
-						await Shell.Current.DisplayAlert("EWRROR!", $"Np se modificó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+						await Shell.Current.DisplayAlert("EWRROR!", $"Np se modificó el empleado {PersonaSeleccionada.nombreCompleto}", "OK");
 
 					}
 				}
 				else
 				{
+					HttpStatusCode statusCode = await bl.insertarPersonaBL(PersonaSeleccionada);
 
-					if (!bl.insertarPersonaBL(PersonaSeleccionada))
+					bool isFaulted = statusCode.Equals(HttpStatusCode.OK);
+
+					if (!isFaulted)
 					{
-						await Shell.Current.DisplayAlert("ERROR!", $"No se insertó el empleado {PersonaSeleccionada.NombreCompleto}", "OK");
+						await Shell.Current.DisplayAlert("ERROR!", $"No se insertó el empleado {PersonaSeleccionada.nombreCompleto}", "OK");
 						await Shell.Current.GoToAsync("..");
 					}
 				}
+				await Shell.Current.DisplayAlert($"Gestor empleados", $"Nuevo empleado introducido id:{PersonaSeleccionada.id}", "OK");
+
 				await Shell.Current.GoToAsync("..");
 			}
 		}
+
+
 
 		public void ApplyQueryAttributes(IDictionary<string, object> query)
 		{

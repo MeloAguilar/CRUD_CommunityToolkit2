@@ -1,3 +1,5 @@
+using BL.Listados;
+
 namespace CRUD_CommunityToolkitUI.Views;
 
 public partial class ListaPersonasPage : ContentPage
@@ -9,8 +11,11 @@ public partial class ListaPersonasPage : ContentPage
 
 	
 
-	protected override void OnAppearing()
+	protected override async void OnAppearing()
 	{
+
+		clsVMListadoPersonas vm = await clsVMListadoPersonas.CreateAsync();
+		BindingContext = vm;
 		InitializeComponent();
 
 		base.OnAppearing();

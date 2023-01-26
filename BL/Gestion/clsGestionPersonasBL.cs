@@ -3,6 +3,7 @@ using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,9 +27,9 @@ namespace BL.Gestion
 		/// </summary>
 		/// <param name="persona"></param>
 		/// <returns></returns>
-		public bool insertarPersonaBL(clsPersona persona)
+		public async Task<HttpStatusCode> insertarPersonaBL(clsPersona persona)
 		{
-			return dal.insertarPersona(persona);
+			return await clsGestionPersonas.insertarPersona(persona);
 		}
 
 		/// <summary>
@@ -40,9 +41,9 @@ namespace BL.Gestion
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public bool deletePersonaBL(int id)
+		public async Task<HttpResponseMessage> deletePersonaBL(int id)
 		{
-			return dal.deletePersona(id);
+			return await clsGestionPersonas.deletePersona(id);
 		}
 
 		/// <summary>

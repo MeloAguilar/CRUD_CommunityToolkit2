@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\DAL\\DAL.csproj": {}
+    "C:\\CRUD_CommunityToolkit2\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\DAL\\DAL.csproj": {
+    "C:\\CRUD_CommunityToolkit2\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\CRUD_CommunityToolkit2\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\DAL\\DAL.csproj",
+        "projectPath": "C:\\CRUD_CommunityToolkit2\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\carra\\.nuget\\packages\\",
-        "outputPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\DAL\\obj\\",
+        "outputPath": "C:\\CRUD_CommunityToolkit2\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "A:\\Programas\\Visual Studio Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\carra\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj": {
-                "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj"
+              "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj"
               }
             }
           }
@@ -52,6 +52,10 @@
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [
@@ -70,21 +74,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj": {
+    "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\Entities.csproj",
+        "projectPath": "C:\\CRUD_CommunityToolkit2\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\carra\\.nuget\\packages\\",
-        "outputPath": "A:\\DAM\\DEINT\\CRUD_PERSONAS_EMPLEADOS\\CRUD_CommunityToolkit\\Entities\\obj\\",
+        "outputPath": "C:\\CRUD_CommunityToolkit2\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "A:\\Programas\\Visual Studio Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\carra\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -114,6 +118,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json.Bson": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -130,7 +140,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

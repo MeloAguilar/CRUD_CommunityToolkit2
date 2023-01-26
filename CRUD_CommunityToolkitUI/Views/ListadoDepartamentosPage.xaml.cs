@@ -12,8 +12,11 @@ public partial class ListadoDepartamentosPage : ContentPage
 		return base.OnBackButtonPressed();
 	}
 
-	protected override void OnAppearing()
+	protected override async void OnAppearing()
 	{
+
+		clsVMListadoDepartamentos vm = await clsVMListadoDepartamentos.CreateAsync();
+		BindingContext = vm;
 		InitializeComponent();
 
 		base.OnAppearing();

@@ -31,17 +31,9 @@ namespace BL.Listados
 		/// </summary>
 		/// <param name="persona"></param>
 		/// <returns></returns>
-		public ObservableCollection<clsPersona> getListadoCompletoPersonasBL()
+		public async static Task<ObservableCollection<clsPersona>> getListadoCompletoPersonasBL()
 		{
-			
-			ObservableCollection<clsPersona> personas = new ObservableCollection<clsPersona>();
-			foreach(clsPersona clsPersona in dal.getListadoCompletoPersonas())
-			{
-				personas.Add(clsPersona);
-			}
-
-
-			return personas;
+			return new ObservableCollection<clsPersona>(await clsListadoPersonas.getListadoCompletoPersonas());
 		}
 
 
